@@ -1,0 +1,12 @@
+{{define "Title"}}
+ {{ .Title}}
+{{end}}
+
+{{define "Body"}}
+<html>
+<body>
+	<p>{{ .Text }}</p>
+
+</html>
+
+{{end}}
