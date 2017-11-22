@@ -2,16 +2,29 @@
 <html lang="en">
 
 <head>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-     <title>{{template "Title" .}}</title>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+	<link href="/static/css/style.css" rel="stylesheet">
+	<title>{{template "Title" .}}</title>
 
 
 </head>
 
 <body>
-Det här är huvudsidan
+	<div class="container">
+		<div class="row">
+			<h1>Welcome to the Visualizing Wizard!</h1>
+		</div>
 
 {{template "Body" .}}
+	</div>
 
 </body>
 

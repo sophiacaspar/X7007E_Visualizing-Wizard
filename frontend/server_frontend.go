@@ -8,19 +8,23 @@ import (
 )
 
 type TextView struct {
-    Title     string
+    Title     	string
     Text        string
+}
+
+type ButtonText struct {
+	Title     		string
+	ButtonContent	string
 }
 
 /*****************************************
 *** Adds content on website            ***
 *****************************************/
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("funkar")
-	title := "test"
-    text := "Den här texten borde hamna på sidan"
-	tv := &TextView{title, text}
-    template.Must(template.ParseFiles("static/index.html", "static/templates/test.tmp")).Execute(w, tv)
+	title := "Visualizing Wizard"
+    buttonContent := "Get started"
+	bt := &ButtonText{title, buttonContent}
+    template.Must(template.ParseFiles("static/index.html", "static/templates/start.tmp")).Execute(w, bt)
 }
 
 
