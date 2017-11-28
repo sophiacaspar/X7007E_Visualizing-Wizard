@@ -1,0 +1,23 @@
+{{define "Title"}}
+ {{ .Title}}
+{{end}}
+
+{{define "Body"}}
+<html>
+<body>
+	<div class="row">
+		<h1>Welcome to the Visualizing Wizard!</h1>
+	</div>
+		<div class="row">
+
+	        	<div class="btn-container">
+	            <a href="/quiz" class="btn btn-success btn-lg btn-block btn-huge">{{ .ButtonContent }}</a>
+	            </div>
+
+    	</div>
+
+	</div>
+</body>
+</html>
+
+{{end}}

@@ -1,0 +1,80 @@
+{{define "Title"}}
+	Quiz
+{{end}}
+
+{{define "Body"}}
+<html>
+<script src="/static/js/quiz.js"></script>
+<body>
+<!--
+<div class="row">
+	<div class="question" id="question" value="q1">
+		<h1>{{ .Question }}</h1>
+			
+	</div>
+</div>
+
+<div class="row">
+	<div class="btn-container">
+	    <div class="col-md-3">
+	        <a href="#" class="btn btn-success btn-lg btn-block btn-huge">{{ .Choice1 }}</a>
+	    </div>
+	    <div class="col-md-3">
+	        <a href="#" class="btn btn-success btn-lg btn-block btn-huge"> {{ .Choice2 }}</a>
+	    </div>
+	    <div class="col-md-3">
+	        <a href="#" class="btn btn-success btn-lg btn-block btn-huge">{{ .Choice3 }}</a>
+	    </div>
+	    <div class="col-md-3">
+	        <a href="#" class="btn btn-success btn-lg btn-block btn-huge">{{ .Choice4 }}</a>
+	    </div>
+	    </div>
+
+	</div> -->
+
+<div class="row">
+	<div class="question" id="question" value="q1">
+		<h1>{{ .Question }}</h1>
+			
+	</div>
+</div>
+
+<div class="row">
+
+	<div id="test1" class="btn-container" style="display: none;">
+	    <div class="col-md-3">
+	        <a class="btn btn-success btn-lg btn-block btn-huge" onclick="getAnswers('monday')">{{ .Choice1 }}</a>
+	    </div>
+	    <div class="col-md-3">
+	        <a class="btn btn-success btn-lg btn-block btn-huge" onclick="getAnswers('wednesday')"> {{ .Choice2 }}</a>
+	    </div>
+	    <div class="col-md-3">
+	        <a class="btn btn-success btn-lg btn-block btn-huge" onclick="getAnswers('friday')">{{ .Choice3 }}</a>
+	    </div>
+	    <div class="col-md-3">
+	        <a class="btn btn-success btn-lg btn-block btn-huge" onclick="getAnswers('saturday')">{{ .Choice4 }}</a>
+	    </div>
+	    </div>
+
+
+	<div id="test2" class="btn-container" style="display: none;">
+		<div class="col-md-3">
+			<a class="btn btn-success btn-lg btn-block btn-huge" onclick="showAnswers('ett')">Nytt svar1</a>
+		</div>
+		<div class="col-md-3">
+			<a class="btn btn-success btn-lg btn-block btn-huge" onclick="showAnswers('två')"> Nytt svar2</a>
+		</div>
+		<div class="col-md-3">
+			<a class="btn btn-success btn-lg btn-block btn-huge" onclick="showAnswers('tre')">Nytt svar3</a>
+		</div>
+		<div class="col-md-3">
+			<a class="btn btn-success btn-lg btn-block btn-huge" onclick="showAnswers('fyra')">Nytt svar4</a>
+		</div>
+	</div>
+
+	<div id="result"></div>
+
+</body>
+</html>
+
+{{end}}
