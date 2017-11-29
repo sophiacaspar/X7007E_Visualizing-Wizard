@@ -1,48 +1,71 @@
 var q = 0;
 var obj= {};
-$( document ).ready(function() {
-  $("#test1").show();
-  });
-
 
 function getAnswers(ans){
 	switch(q) {
 		case 0:
 			obj.q1 = ans;
-			var current = document.getElementById('test1');
-			current.id = 'test2';
-			var next = document.getElementById('test2');
+			var newQuestion = "What's your favourite color?";
+			var answers = [
+							"red",
+							"blue",
+							"green",
+							"yellow"
+							];
 
-			document.getElementById('ans1').innerHTML = "test";
-			document.getElementById('ans1').setAttribute('onclick', "showAnswers('test')");
-			//current.style.display = "none";
-			//next.style.display = "block";
+			setNewQuestion(newQuestion);
+
+			for (var i = 0; i < 4; i++) {
+				var id = "ans" + (i+1);
+				setNewAnswer(id, answers[i]);
+				setNewOnclickAttribute(id, answers[i], false);
+			}
+
 			q++;
 			break;
 		case 1:
+			obj.q2 = ans;
+			var newQuestion = "What's your favourite fruit?";
+			var answers = [
+							"orange",
+							"banana",
+							"kiwi",
+							"apple"
+							];
+
+			setNewQuestion(newQuestion);
+			
+			for (var i = 0; i < 4; i++) {
+				var id = "ans" + (i+1);
+				setNewAnswer(id, answers[i]);
+				setNewOnclickAttribute(id, answers[i], true);
+			}
+			q++
 			break;
 	}
 }
 
 function setNewQuestion(question){
-
+	document.getElementById("question").innerHTML = question;
 }
 
-function setNewID(current, next){
-
-}
 
 function setNewAnswer(id, answer){
-
+	document.getElementById(id).innerHTML = answer;
 }
 
 function setNewOnclickAttribute(id, shortAnswer, lastQuestion){
+	if (lastQuestion == false) {
+		document.getElementById(id).setAttribute('onclick', "getAnswers('" + shortAnswer + "')");
+	} else {
+		document.getElementById(id).setAttribute('onclick', "showAnswers('" + shortAnswer + "')");
+	}
 
 }
 
 function showAnswers(ans) {
-	obj.q2 = ans;
-	var current = document.getElementById('test2');
+	obj.q3 = ans;
 	document.getElementById('result').innerHTML = JSON.stringify(obj);
 	
 }
+
