@@ -14,9 +14,10 @@
 	</div>
 </div>
 
-<div class="row">
+
 
 	<div id="quiz" class="btn-container">
+		<div class="row">
 	    <div class="col-md-3">
 	        <a class="btn btn-success btn-lg btn-block btn-huge" id="ans1" onclick="getAnswers('monday')">{{ .Choice1 }}</a>
 	    </div>
@@ -29,6 +30,14 @@
 	    <div class="col-md-3">
 	        <a class="btn btn-success btn-lg btn-block btn-huge" id="ans4" onclick="getAnswers('saturday')">{{ .Choice4 }}</a>
 	    </div>
+	</div>
+
+	<div class="row dontKnow">
+
+	        <a class="btn btn-danger btn-lg btn-block btn-huge" id="ans5" onclick="getAnswers('Null')">Don't know</a>
+
+	</div>
+</div>
 
 	<div id="result"></div>
 

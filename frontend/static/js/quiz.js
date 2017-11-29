@@ -40,6 +40,8 @@ function getAnswers(ans){
 				setNewAnswer(id, answers[i]);
 				setNewOnclickAttribute(id, answers[i], true);
 			}
+
+			setNewOnclickAttribute('ans5', "Null", true);
 			q++
 			break;
 	}
