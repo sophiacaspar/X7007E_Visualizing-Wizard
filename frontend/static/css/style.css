@@ -23,6 +23,8 @@ h1 {
 	width: 250px;
     padding-top:20px;
     padding-bottom:20px;
+    white-space: normal;
+
 }
 
   .navbar-default {
