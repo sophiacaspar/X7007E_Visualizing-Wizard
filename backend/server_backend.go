@@ -12,14 +12,14 @@ import (
 )
 
 type Answers struct {
-	A1     	string `json="a1"`
-	A2		string `json="a2"`
-	A3		string `json="a3"`
-	A4		string `json="a4"`
-	A5		string `json="a5"`
-	A6		string `json="a6"`
-	A7		string `json="a7"`
-	A8		string `json="a8"`
+	Q1     	string `json="q1"`
+	Q2		string `json="q2"`
+	Q3		string `json="q3"`
+	Q4		string `json="q4"`
+	Q5		string `json="q5"`
+	Q6		string `json="q6"`
+	Q7		string `json="q7"`
+	Q8		string `json="q8"`
 }
 
 type Test struct {
@@ -37,6 +37,7 @@ func startBackend() {
 	ip := "localhost:1026"
 	router := httprouter.New()
 	router.GET("/test", testHandler)
+	router.POST("/quizResult", quizHandler)
 
 
 
@@ -66,6 +67,37 @@ func testHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	w.WriteHeader(200) // is ok
 	w.Write(jsonBody)
 
+}
+
+
+func quizHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	fmt.Println("POST quizHandler")
+
+	dec := json.NewDecoder(r.Body)
+	answers := Answers{}
+	err := dec.Decode(&answers)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	answers.returnResult(w, r, ps)
+
+}
+
+func (ans *Answers) returnResult(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	fmt.Println("Returning result")
+	fmt.Println(ans)
+
+/*
+	dec := json.NewDecoder(r.Body)
+	answers := Answers{}
+	err := dec.Decode(&answers)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(answers)
+*/
 }
 
 

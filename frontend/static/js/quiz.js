@@ -2,6 +2,7 @@
 
 var q = 0;
 var answersFromUser= {};
+var ip = getIP();
 
 
 $( document ).ready(function() {
@@ -81,15 +82,32 @@ function setNewOnclickAttribute(id, lastQuestion){
 	} else {
 		document.getElementById(id).setAttribute('onclick', "showAnswers('" + id + "')");
 	}
-
 }
 
 function showAnswers(ans) {
 	answersFromUser.q8 = ans;
+	sendAnswers();
 	document.getElementById('result').innerHTML = JSON.stringify(answersFromUser);
 	
 }
 
 
+function sendAnswers() {
+	var xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+              alert("Success! Upload completed");
+            } else {
+              alert("Error! Upload failed");
+            }
+          };
+          xhr.onerror = function() {
+            alert("Error! Upload failed." + xhr.status);
+          };
+            
+          xhr.open('POST', ip + '/quizResult', true);
+          xhr.setRequestHeader("Content-Type", "application/json");
+          xhr.send(JSON.stringify(answersFromUser));
+      }
 
 

@@ -4,8 +4,10 @@
 
 {{define "Body"}}
 <html>
+<script src="/static/js/getIP.js"></script> 
 <script src="/static/js/quiz.js"></script>
 <script src="/static/js/questions.js"></script> 
+
 <body>
 
 <div class="row">
