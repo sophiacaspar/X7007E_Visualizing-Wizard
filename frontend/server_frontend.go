@@ -13,11 +13,7 @@ type ButtonText struct {
 }
 
 type Quiz struct {
-	Question	string
-	Choice1		string
-	Choice2		string
-	Choice3		string
-	Choice4		string
+	Title 		string
 }
 
 /*****************************************
@@ -31,12 +27,8 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func QuizHandler(w http.ResponseWriter, r *http.Request) {
-	question := "What day is it today?"
-    c1 := "Monday"
-    c2 := "Wednesday"
-    c3 := "Thursday"
-    c4 := "Friday"
-	q := &Quiz{question, c1, c2, c3, c4}
+	title := "Quiz"
+	q := &Quiz{title}
     template.Must(template.ParseFiles("static/index.html", "static/templates/quiz.tmp")).Execute(w, q)
 }
 

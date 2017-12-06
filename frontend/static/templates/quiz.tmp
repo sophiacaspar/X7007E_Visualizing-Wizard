@@ -1,5 +1,5 @@
 {{define "Title"}}
-	Quiz
+	{{ .Title}}
 {{end}}
 
 {{define "Body"}}
