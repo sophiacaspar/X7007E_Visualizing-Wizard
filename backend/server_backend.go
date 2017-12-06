@@ -5,21 +5,26 @@ import (
 	"github.com/rs/cors"
 	"github.com/julienschmidt/httprouter" //https://github.com/julienschmidt/httprouter
 	"net/http"
-	"strconv"
+	//"strconv"
 	"encoding/json"
 	"log"
-	"os"
+	//"os"
 )
 
 type Answers struct {
-	A1     	string
-	A2		string
-	A3		string
-	A4		string
-	A5		string
-	A6		string
-	A7		string
-	A8		string
+	A1     	string `json="a1"`
+	A2		string `json="a2"`
+	A3		string `json="a3"`
+	A4		string `json="a4"`
+	A5		string `json="a5"`
+	A6		string `json="a6"`
+	A7		string `json="a7"`
+	A8		string `json="a8"`
+}
+
+type Test struct {
+	Greeting 	string `json="greeting"`
+	Name		string `json="name"`
 }
 
 /*****************************************
@@ -31,7 +36,7 @@ func startBackend() {
 	//ip := "130.240.170.62:1026"
 	ip := "localhost:1026"
 	router := httprouter.New()
-	router.POST("/user/:id", l.getUser)
+	router.GET("/test", testHandler)
 
 
 
@@ -43,9 +48,26 @@ func startBackend() {
 
 	// Insert the middleware
 	handler := c.Handler(router)
-	log.Fatal(http.ListenAndServe(ip, handler))
 	fmt.Println("running on", ip)
+	log.Fatal(http.ListenAndServe(ip, handler))
+	
 }
+
+
+
+func testHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	fmt.Println("GET test")
+
+	greeting := "hello"
+	name := "Sophia"
+	test := &Test{greeting, name}
+
+	jsonBody, _ := json.Marshal(test)
+	w.WriteHeader(200) // is ok
+	w.Write(jsonBody)
+
+}
+
 
 /*******************************************************
 *************** ERROR HANDLERS *************************
