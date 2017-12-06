@@ -88,16 +88,10 @@ func (ans *Answers) returnResult(w http.ResponseWriter, r *http.Request, ps http
 	fmt.Println("Returning result")
 	fmt.Println(ans)
 
-/*
-	dec := json.NewDecoder(r.Body)
-	answers := Answers{}
-	err := dec.Decode(&answers)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	fmt.Println(answers)
-*/
+	jsonBody, err := json.Marshal(ans)
+	w.WriteHeader(200) // is ok
+	w.Write(jsonBody)
+	checkError(w, err)
 }
 
 

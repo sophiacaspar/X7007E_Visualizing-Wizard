@@ -8,7 +8,7 @@
 <script src="/static/js/quiz.js"></script>
 <script src="/static/js/questions.js"></script> 
 
-<body>
+<body onload="firstQuestion()">
 
 <div class="row">
 	<div class="question" >
@@ -42,8 +42,6 @@
 
 	</div>
 </div>
-
-	<div id="result"></div>
 
 </body>
 </html>

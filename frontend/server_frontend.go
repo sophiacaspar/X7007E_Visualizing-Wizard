@@ -32,6 +32,11 @@ func QuizHandler(w http.ResponseWriter, r *http.Request) {
     template.Must(template.ParseFiles("static/index.html", "static/templates/quiz.tmp")).Execute(w, q)
 }
 
+func ResultHandler(w http.ResponseWriter, r *http.Request) {
+	title := "Result"
+	q := &Quiz{title}
+    template.Must(template.ParseFiles("static/index.html", "static/templates/result.tmp")).Execute(w, q)
+}
 
 /*****************************************
 *** Starts the http-server with the    ***
@@ -42,6 +47,7 @@ func startWebserver() {
 	//router.GET("/", IndexHandler)
 	http.HandleFunc("/", IndexHandler)
 	http.HandleFunc("/quiz", QuizHandler)
+	http.HandleFunc("/result", ResultHandler)
 
 	fmt.Println("running on localhost:1025")
 	log.Fatal(http.ListenAndServe("localhost:1025", nil))

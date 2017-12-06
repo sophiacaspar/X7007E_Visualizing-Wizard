@@ -5,12 +5,6 @@ var answersFromUser= {};
 var ip = getIP();
 
 
-$( document ).ready(function() {
-	firstQuestion();
-
-});
-
-
 function firstQuestion(){
 	setNewQuestion(questions.q1, answers.q1);
 }
@@ -51,14 +45,12 @@ function getAnswers(ans){
 			answersFromUser.q7 = ans;
 
 			setNewQuestion(questions.q8, answers.q8);
-			
-			for (var i = 0; i < 4; i++) {
-				var id = "ans" + (i+1);
-				setNewOnclickAttribute(id, true);
-			}
-
-			setNewOnclickAttribute('ans5', "Null", true);
 			q++
+			break;
+		case 7:
+			answersFromUser.q8 = ans;
+			sendAnswers();
+			q++;
 			break;
 	}
 }
@@ -77,26 +69,25 @@ function setNewAnswer(id, answer){
 }
 
 function setNewOnclickAttribute(id, lastQuestion){
-	if (lastQuestion == false) {
-		document.getElementById(id).setAttribute('onclick', "getAnswers('" + id + "')");
-	} else {
-		document.getElementById(id).setAttribute('onclick', "showAnswers('" + id + "')");
-	}
+	document.getElementById(id).setAttribute('onclick', "showAnswers('" + id + "')");
 }
 
 function showAnswers(ans) {
 	answersFromUser.q8 = ans;
 	sendAnswers();
-	document.getElementById('result').innerHTML = JSON.stringify(answersFromUser);
 	
 }
 
 
 function sendAnswers() {
 	var xhr = new XMLHttpRequest();
-        xhr.onload = function() {
+        xhr.onload = function(event) {
             if (xhr.status == 200) {
-              alert("Success! Upload completed");
+        		var result = event.target.response;
+          		result = JSON.parse(result);
+          		//viewResult(result);
+          		location.replace("/result");
+          		
             } else {
               alert("Error! Upload failed");
             }
@@ -110,4 +101,8 @@ function sendAnswers() {
           xhr.send(JSON.stringify(answersFromUser));
       }
 
+
+function viewResult(result){
+	document.getElementById('result').innerHTML = JSON.stringify(result);
+}
 
