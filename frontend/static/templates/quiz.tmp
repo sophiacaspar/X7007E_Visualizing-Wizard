@@ -7,9 +7,11 @@
 <script src="/static/js/getIP.js"></script> 
 <script src="/static/js/quiz.js"></script>
 <script src="/static/js/questions.js"></script> 
+<script src="/static/js/result.js"></script> 
 
 <body onload="firstQuestion()">
 
+<div id="quiz">
 <div class="row">
 	<div class="question" >
 		<h1 id="question"></h1>
@@ -20,7 +22,7 @@
 
 
 
-	<div id="quiz" class="btn-container">
+	<div id="answers" class="btn-container">
 		<div class="row">
 	    <div class="col-md-3">
 	        <a class="btn btn-success btn-lg btn-block btn-huge" id="ans1" onclick="getAnswers('ans1')"></a>
@@ -42,6 +44,9 @@
 
 	</div>
 </div>
+</div>
+
+<div id="result" display="none"></div>
 
 </body>
 </html>

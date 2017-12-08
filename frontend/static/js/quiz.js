@@ -5,6 +5,7 @@ var answersFromUser= {};
 var ip = getIP();
 
 
+
 function firstQuestion(){
 	setNewQuestion(questions.q1, answers.q1);
 }
@@ -85,8 +86,9 @@ function sendAnswers() {
             if (xhr.status == 200) {
         		var result = event.target.response;
           		result = JSON.parse(result);
-          		//viewResult(result);
-          		location.replace("/result");
+
+          		displayResult();
+          		viewResult(result);
           		
             } else {
               alert("Error! Upload failed");
@@ -102,7 +104,4 @@ function sendAnswers() {
       }
 
 
-function viewResult(result){
-	document.getElementById('result').innerHTML = JSON.stringify(result);
-}
 
