@@ -20,6 +20,10 @@ getResultFromQuiz(X, _, _, ans1, _, Y, ans4, ans4, radkollaps):-
 		Y == ans3
 	).
 
+%! radkollaps
+getResultFromQuiz(X, _, _, ans1, _, _, ans4, ans4, radkollaps):-
+	X \== ans2.
+
 %! klick pink
 getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, klick):-
 	(
@@ -28,25 +32,39 @@ getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, klick):-
 		Q == ans3
 	).
 
-%! klick orange, green, blue
-getResultFromQuiz(X, Y, Z, _, _, ans4, Q, ans3, klick):-
+%! klick + skroll
+getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, Result):-
+	X \== ans2,
+	Y \== ans1,
+	Z \== ans1,
+	Q \== ans4,
+
+	(
+		Result = klick;
+		Result = skroll
+	).
+
+
+%! squish
+getResultFromQuiz(_, _, X, _, _, _, Y, Z, squish):-
 	(
 		X == ans1;
-		X == ans3;
-		X == ans4
+		X == ans2
 	),
+		Y \== ans4,
 	(
-		Y == ans2;
-		Y == ans3;
-		Y == ans4
-	),
-	(
-		Z == ans2;
-		Z == ans3;
-		Z == ans4
-	),
-	(
-		Q == ans1;
-		Q == ans2;
-		Q == ans3
+		Z == ans1;
+		Z == ans2
 	).
+
+%! squish
+getResultFromQuiz(_, _, X, _, _, _, Y, Z, squish):-
+	(
+		X == ans1;
+		X == ans2
+	),
+	(
+		Y == ans4;
+		Z == ans4
+	).
+
