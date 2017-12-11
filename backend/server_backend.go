@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/mndrix/golog"
 	"github.com/rs/cors"
 	"github.com/julienschmidt/httprouter" //https://github.com/julienschmidt/httprouter
-	"github.com/mndrix/golog"
 	"net/http"
 	//"strconv"
 	"encoding/json"
@@ -24,8 +24,8 @@ type Answers struct {
 }
 
 type Test struct {
-	Greeting 	string `json="greeting"`
-	Name		string `json="name"`
+	Result 	string `json="result"`
+	
 }
 
 /*****************************************
@@ -59,15 +59,40 @@ func startBackend() {
 
 func testHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Println("GET test")
+	m := golog.NewMachine().Consult(test())
 
-	greeting := "hello"
-	name := "Sophia"
-	test := &Test{greeting, name}
+	if m.CanProve(`father(john).`) {
+	    fmt.Printf("john is a father\n")
+	}
 
-	jsonBody, _ := json.Marshal(test)
-	w.WriteHeader(200) // is ok
-	w.Write(jsonBody)
+	solutions := m.ProveAll(`parent(X).`)
+	for _, solution := range solutions {
+	    fmt.Printf("%s is a parent\n", solution.ByName_("X"))
+	}
 
+
+//	greeting := "hello"
+//	name := "Sophia"
+//	test := &Test{greeting, name}
+
+//	jsonBody, _ := json.Marshal(test)
+//	w.WriteHeader(200) // is ok
+//	w.Write(jsonBody)
+
+}
+
+func test() string {
+	return (`
+	    father(john).
+	    father(jacob).
+
+	    mother(sue).
+
+	    parent(X) :-
+	        father(X).
+	    parent(X) :-
+	        mother(X).
+		`)
 }
 
 
