@@ -58,11 +58,8 @@ getResultFromQuiz(_, _, X, _, _, _, Y, Z, squish):-
 		X == ans2
 	),
 		Y \== ans4,
-	(
-		Z == ans1
-		;
-		Z == ans2
-	).
+		Z \== ans4
+	.
 
 %! squish
 getResultFromQuiz(_, _, X, _, _, _, Y, Z, squish):-
@@ -76,4 +73,6 @@ getResultFromQuiz(_, _, X, _, _, _, Y, Z, squish):-
 		;
 		Z == ans4
 	).
+
+
 
