@@ -1,0 +1,12 @@
+.tablesaw {
+	background-color: white;
+	border-radius: .4em;
+}
+
+.tablesaw tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+.tablesaw th {
+    background-color: white;
+}

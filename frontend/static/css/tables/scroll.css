@@ -1,0 +1,43 @@
+/* https://codepen.io/paulobrien/pen/gWoVzN */
+
+.table-scroll {
+	position:relative;
+	margin:auto;
+	overflow:hidden;
+	border:1px solid #000;
+}
+
+@media (min-width: 1000px) {
+  .table-scroll {
+    width: fit-content;
+  }
+  .table-scroll table {
+  	width: fit-content;
+  }
+}
+
+.table-wrap {
+	width:100%;
+	overflow:auto;
+}
+.table-scroll table {
+	width: 100%;
+	margin:auto;
+	border-collapse:separate;
+	border-spacing:0;
+}
+
+.table-scroll th, .table-scroll td {
+	padding:.8em .8em;
+	border: 1px solid black;
+	background:white;
+	white-space:nowrap;
+	vertical-align:top;
+}
+.table-scroll td:nth-child(even), .table-scroll th:nth-child(even) {
+  background: #dddddd;
+}
+
+col {
+	width: 5px;
+}
