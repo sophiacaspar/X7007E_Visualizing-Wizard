@@ -1,0 +1,42 @@
+{{define "Title"}}
+	{{ .Title}}
+{{end}}
+
+{{define "Body"}}
+<html>
+<body>
+
+<div id="result">
+<div class="row">
+		<h3>Baserat på dina svar rekommenderas tabell-lösningen:</h3>
+		<h1 id="resultHeadline">SQUISH</h1>
+	</div>
+<div class="row resultInfo">
+
+	<div class="textbox">
+		Det här innebär lösningen:
+	</div>
+	<div class="textbox">
+		Fördelar/nackdelar
+	</div>
+	<div class="textbox">
+		Tänk på att:
+	</div>
+</div>
+<div class="row">
+	<div class="tableInput">
+	<textarea id="tableInput" rows="7" cols="50" placeholder="Skriv in din tabell här. Separera kolumner med komman (,) och rader med radbrytning."></textarea>
+		<br><button type="button" class="btn btn-info" onclick="getTable()">Generera tabell</button>
+	</div>
+	<div class="generatedTable">
+		dd
+	</div>
+</div>
+
+</div>
+
+
+</body>
+</html>
+
+{{end}}

@@ -36,3 +36,39 @@ h1 {
 .dontKnow {
 	padding: 50px;
 }
+
+.textbox {
+	background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.resultInfo {
+	margin-top: 20px;
+}
+
+.tableInput{
+	background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.generatedTable{
+	background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    width: 720px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
