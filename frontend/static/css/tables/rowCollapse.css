@@ -3,7 +3,7 @@
 
 .rwd-table {
   margin: 1em 0;
-  min-width: 300px;
+  width: 100%;
   background: white;
   color: black;
   border-radius: .4em;

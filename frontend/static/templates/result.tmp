@@ -4,34 +4,99 @@
 
 {{define "Body"}}
 <html>
-<body>
+<script src="/static/js/getIP.js"></script> 
+<script src="/static/js/result.js"></script> 
+<script src="/static/js/quiz.js"></script>
+<script src="/static/js/questions.js"></script> 
+
+<!-- Table scripts and css -->
+<script src="/static/js/tables/tablesaw.jquery.js"></script>
+<script src="/static/js/tables/tablesaw-init.js"></script>
+<link rel="stylesheet" href="/static/css/tables/click.css">
+<link rel="stylesheet" href="/static/css/tables/tablesaw.css">
+
+
+<script src="/static/js/tables/scroll.js"></script> 
+<link href="/static/css/tables/scroll.css" rel="stylesheet">
+
+<script src="/static/js/tables/squish.js"></script> 
+<link href="/static/css/tables/squish.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/static/css/tables/rowCollapse.css">
+
+
+<body onload="displayCode(event, 'HTML')">
 
 <div id="result">
-<div class="row">
+	<div class="row">
 		<h3>Baserat på dina svar rekommenderas tabell-lösningen:</h3>
 		<h1 id="resultHeadline">SQUISH</h1>
 	</div>
-<div class="row resultInfo">
 
-	<div class="textbox">
-		Det här innebär lösningen:
+<div class="resultInfo">
+	<div class="col-sm-4 textbox">
+		<b>Det här innebär lösningen:</b>
+		<div class="squish">
+			Squish ser ut som ursprungstabellen. Ingen tabell eller rad flyttas eller ändras när webbläsaren blir mindre. I stället anpassas storleken på tabellen för att passa den nya skärmstorleken.
+		</div>
 	</div>
-	<div class="textbox">
-		Fördelar/nackdelar
+	<div class="col-sm-4 textbox">
+		<b>Fördelar/nackdelar:</b>
+		<div class="squish">
+			<b>+</b> Squish gör innehållet väldigt överskådligt och lättläst. <br>
+			<b>+</b> Squish gör det enklare för nybörjare att få grepp om datat på en gång.<br>
+			<b>-</b> Squish blir plåttrig och svårläst när det är för många kolumner.
+		</div>
 	</div>
-	<div class="textbox">
-		Tänk på att:
+	<div class="col-sm-4 textbox">
+		<b>Tänk på att:</b>
+		<div class="squish">
+				&#10148; Försök att undvika fler kolumner än ~7st. För mycket data gör att tabellen blir jobbig att läsa.<br><br>
+				&#10148; Fundera om allt innehåll verkligen behöver visas i tabellen eller om det går att placera viss data någon annanstans.<br>
+		</div>
+
 	</div>
 </div>
+
 <div class="row">
-	<div class="tableInput">
-	<textarea id="tableInput" rows="7" cols="50" placeholder="Skriv in din tabell här. Separera kolumner med komman (,) och rader med radbrytning."></textarea>
-		<br><button type="button" class="btn btn-info" onclick="getTable()">Generera tabell</button>
-	</div>
-	<div class="generatedTable">
-		dd
+	<div class="col-sm-4 ">
+		<div class="row tableInput">
+			<textarea id="tableInput" rows="5" cols="50" placeholder="Skriv in din tabell här. Separera kolumner med komman (,) och rader med radbrytning."></textarea>
+			<br><button type="button" class="btn btn-info" onclick="getTable()">Generera tabell</button>
+		</div>
+		<div class="row">
+		<div class="tab">
+				<button class="tablinks" onclick="displayCode(event, 'HTML')">HTML</button>
+				<button class="tablinks" onclick="displayCode(event, 'CSS')">CSS</button>
+				<button class="tablinks" onclick="displayCode(event, 'JS')">JS</button>
+		</div>
+		<div class="tableOutput">
+			<div id="HTML" class="tabcontent">
+				<code>
+					html
+				</code>
+			</div>
+
+			<div id="CSS" class="tabcontent">
+				<code>
+					css
+				</code>
+			</div>
+			<div id="JS" class="tabcontent">
+				<code>
+					js
+				</code>
+			</div>
+
+		</div>
 	</div>
 </div>
+
+	<div class="col-sm-8 generatedTable">
+		<div id="exampleTable"></div>
+	</div>
+</div>
+
 
 </div>
 
