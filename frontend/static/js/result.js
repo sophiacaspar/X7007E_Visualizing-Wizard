@@ -144,7 +144,6 @@ function displayCode(evt, language) {
 }
 
 function getResult(result) {
-	console.log("hej " + result)
     var i, resultContent;
     resultContent = document.getElementsByClassName("resultContent");
     for (i = 0; i < resultContent.length; i++) {

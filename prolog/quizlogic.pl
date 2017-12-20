@@ -36,18 +36,25 @@ getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, klick):-
 		Q == ans3
 	).
 
-%! klick + skroll
-getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, Result):-
+%! klick
+getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, klick):-
 	X \== ans2,
 	Y \== ans1,
 	Z \== ans1,
-	Q \== ans4,
+	Q \== ans4
+	.
 
+%! skroll
+getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, skroll):-
+	X \== ans2,
+	Y \== ans1,
+	Z \== ans1,
 	(
-		Result = klick
+		Q == ans2
 		;
-		Result = skroll
-	).
+		Q == ans3
+		)
+	.
 
 
 %! squish
