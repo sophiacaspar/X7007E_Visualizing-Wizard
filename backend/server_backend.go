@@ -59,8 +59,6 @@ func (ans *Answers) golog(w http.ResponseWriter, r *http.Request, ps httprouter.
 	fmt.Println("golog")
 	prologInput := ans.Q1 + ", " + ans.Q2 + ", " + ans.Q3 + ", " + ans.Q4 +", "+ ans.Q5 + ", " + ans.Q6 + ", " + ans.Q7 + ", " + ans.Q8 
 
-	fmt.Println(prologInput)
-
 	m := golog.NewMachine().Consult(quizLogic())
 
 	solutions := m.ProveAll(`getResultFromQuiz(`+prologInput+`, Result).`)
@@ -129,7 +127,7 @@ func removeDuplicates(elements []string) []string {
 func quizLogic() string{
 	return `
 		%! radkollaps pink
-	getResultFromQuiz(ans1, X, Y, ans1, _, ans1, ans4, ans4, radkollaps):-
+	getResultFromQuiz(ans1, X, Y, ans1, _, ans1, ans4, ans4, rowCollapse):-
 		(
 			X == ans1
 			;
@@ -142,7 +140,7 @@ func quizLogic() string{
 		).
 
 	%! radkollaps blue, green
-	getResultFromQuiz(X, _, _, ans1, _, Y, ans4, ans4, radkollaps):-
+	getResultFromQuiz(X, _, _, ans1, _, Y, ans4, ans4, rowCollapse):-
 		(
 			X == ans3,
 			Y == ans4
@@ -153,11 +151,11 @@ func quizLogic() string{
 		).
 
 	%! radkollaps
-	getResultFromQuiz(X, _, _, ans1, _, _, ans4, ans4, radkollaps):-
+	getResultFromQuiz(X, _, _, ans1, _, _, ans4, ans4, rowCollapse):-
 		X \== ans2.
 
 	%! klick pink
-	getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, klick):-
+	getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, click):-
 		(
 			Q == ans1
 			;
@@ -174,9 +172,9 @@ func quizLogic() string{
 		Q \== ans4,
 
 		(
-			Result = klick
+			Result = click
 			;
-			Result = skroll
+			Result = scroll
 		).
 
 

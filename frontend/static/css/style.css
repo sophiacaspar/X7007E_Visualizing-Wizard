@@ -121,5 +121,21 @@ textarea {
     background-color: #ccc;
 }
 
+.squish {
+	display: none;
+}
+.rowCollapse {
+	display: none;
+}
+.click {
+	display: none;
+}
+.scroll {
+	display: none;
+}
+
+.resultContent {
+	display: none;
+}
 
 

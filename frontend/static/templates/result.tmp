@@ -30,29 +30,68 @@
 <div id="result">
 	<div class="row">
 		<h3>Baserat på dina svar rekommenderas tabell-lösningen:</h3>
-		<h1 id="resultHeadline">SQUISH</h1>
+		<h1 class="resultContent" id="squishResult">SQUISH</h1>
+		<h1 class="resultContent" id="rowCollapseResult">RADKOLLAPS</h1>
+		<h1 class="resultContent" id="clickResult">KLICK</h1>
+		<h1 class="resultContent" id="scrollResult">SKROLL</h1>
 	</div>
 
 <div class="resultInfo">
 	<div class="col-sm-4 textbox">
 		<b>Det här innebär lösningen:</b>
-		<div class="squish">
-			Squish ser ut som ursprungstabellen. Ingen tabell eller rad flyttas eller ändras när webbläsaren blir mindre. I stället anpassas storleken på tabellen för att passa den nya skärmstorleken.
+		<div class="resultContent" id="squishExplanation">
+			Squish ser ut som ursprungstabellen. Ingen tabell eller rad flyttas eller ändras när webbläsaren blir mindre. I stället anpassas storleken på tabellen för att passa den nya skärmstorleken. Lösningen är överskådlig och lättläst sålänge som antalet kolumner ej överstiger 7st.
+		</div>
+		<div class="resultContent" id="rowCollapseExplanation">
+			Radkollaps lägger varje rad i en egen ruta med tillhörande rubrik. Varje ruta hamnar då ovanpå varandra på små skärmar. Lösningen är bra för mindre datamängder och bör ej användas när innehållet ska jämföras.
+		</div>
+		<div class="resultContent" id="clickExplanation">
+			Klick innebär att vissa kolumner göms när webbläsaren öppnas på en liten skärm. För att kunna läsa resten av innehållet måste användaren klicka sig fram och tillbaka via en knapp. Lösningen är bra vid jämförelse av få kolumner.
+		</div>
+		<div class="resultContent" id="scrollExplanation">
+			Skroll innebär att vissa kolumner göms när webbläsaren öppnas på en liten skärm. För att kunna läsa resten av innehållet måste användaren skrolla/swipa fram och tillbaka. Lösningen är bra vid jämförelse av få kolumner.
 		</div>
 	</div>
 	<div class="col-sm-4 textbox">
 		<b>Fördelar/nackdelar:</b>
-		<div class="squish">
+		<div class="resultContent" id="squishProCon">
 			<b>+</b> Squish gör innehållet väldigt överskådligt och lättläst. <br>
 			<b>+</b> Squish gör det enklare för nybörjare att få grepp om datat på en gång.<br>
 			<b>-</b> Squish blir plåttrig och svårläst när det är för många kolumner.
 		</div>
+		<div class="resultContent" id="rowCollapseProCon">
+			<b>+</b> Raskollaps är tilltalande och går fort att läsa. <br>
+			<b>+</b> Radkollaps är bra när en specifik data ska läsas.<br>
+			<b>-</b> Radkollaps är ej bra på jämförelse och kan ej hantera för mycket data.<br>
+			<b>-</b> Radkollaps är bökig när det finns för många alternativ.
+		</div>
+		<div class="resultContent" id="clickProCon">
+			<b>+</b> Klick är bra vid jämförelse av mindre datamängder.<br>
+			<b>-</b> Klick gör att det kan bli svårt att komma ihåg all data när det är för många kolumner att klicka mellan. <br>
+		</div>
+		<div class="resultContent" id="scrollProCon">
+			<b>+</b> Skroll är bra när en kolumn ska jämföras i taget.<br>
+			<b>+</b> Skroll är trevlig att använda på mobiltelefoner.<br>
+			<b>-</b> Skroll gör att det kan bli svårt att komma ihåg all data när det är för många kolumner att skrolla mellan. <br>
+		</div>
 	</div>
 	<div class="col-sm-4 textbox">
 		<b>Tänk på att:</b>
-		<div class="squish">
+		<div class="resultContent" id="squishThink">
 				&#10148; Försök att undvika fler kolumner än ~7st. För mycket data gör att tabellen blir jobbig att läsa.<br><br>
 				&#10148; Fundera om allt innehåll verkligen behöver visas i tabellen eller om det går att placera viss data någon annanstans.<br>
+		</div>
+		<div class="resultContent" id="rowCollapseThink">
+				&#10148; Undvik både för många rader och kolumner.<br><br>
+				&#10148; Använd inte radkollaps om innehållet i tabellen ska jämföras.<br>
+		</div>
+		<div class="resultContent" id="clickThink">
+				&#10148; Fundera på hur innehållet ska jämföras. En kolumn i taget är optimalt för klick.<br><br>
+				&#10148; Använd varken för få eller för många kolumner. Runt 5-7 blir rätt lagom till klick-lösningen.<br>
+		</div>
+		<div class="resultContent" id="scrollThink">
+				&#10148; Fundera på hur innehållet ska jämföras. En kolumn i taget är optimalt för skroll.<br><br>
+				&#10148; Använd varken för få eller för många kolumner. Runt 5-7 blir rätt lagom till skroll-lösningen.<br>
 		</div>
 
 	</div>

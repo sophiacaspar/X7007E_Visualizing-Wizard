@@ -2,13 +2,9 @@
 
 function displayResult(){
 	document.getElementById('quiz').style.display = "none";
-	document.getElementById('result').style.display = "inline";
+	document.getElementById('result').style.display = "block";
 }
 
-
-function viewResult(result){
-	document.getElementById('resultText').innerHTML = JSON.stringify(result);
-}
 
 function getTable() {
 	var tableInput = document.getElementById("tableInput").value;
@@ -145,6 +141,20 @@ function displayCode(evt, language) {
     }
     document.getElementById(language).style.display = "block";
     evt.currentTarget.className += " active";
+}
+
+function getResult(result) {
+	console.log("hej " + result)
+    var i, resultContent;
+    resultContent = document.getElementsByClassName("resultContent");
+    for (i = 0; i < resultContent.length; i++) {
+        resultContent[i].style.display = "none";
+    }
+
+	document.getElementById(result + "Result").style.display = "block";
+    document.getElementById(result + "Explanation").style.display = "block";
+    document.getElementById(result + "ProCon").style.display = "block";
+    document.getElementById(result + "Think").style.display = "block";
 }
 
 

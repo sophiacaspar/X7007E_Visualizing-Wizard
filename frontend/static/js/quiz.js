@@ -87,8 +87,13 @@ function sendAnswers() {
         		var result = event.target.response;
           		result = JSON.parse(result);
 
+          		//location.replace("/result");
+          		
+          		getResult(result.Result[0]);
+          		console.log(result.Result[0]);
           		displayResult();
-          		viewResult(result);
+          		
+          		//viewResult(result);
           		
             } else {
               alert("Error! Upload failed");
