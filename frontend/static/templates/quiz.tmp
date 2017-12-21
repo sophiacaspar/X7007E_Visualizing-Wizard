@@ -29,8 +29,6 @@
 
 
 
-
-
 <body onload="firstQuestion()">
 
 <div id="quiz">

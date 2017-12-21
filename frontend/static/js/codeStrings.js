@@ -1,4 +1,6 @@
 var squishCSS = `
+<pre>
+<code>
 .responsive {
     margin: 1em 0;
     background: white;
@@ -55,5 +57,7 @@ var squishCSS = `
     padding: 1em !important;
   }
 }
+</code>
+</pre>
 `;
 

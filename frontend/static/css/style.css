@@ -67,7 +67,7 @@ h1 {
     vertical-align: top;
     width: 350px;
     height: 270px;
-    padding: 10px;
+    overflow: scroll;
 }
 
 .generatedTable {
@@ -119,19 +119,6 @@ textarea {
 
 .tab button.active {
     background-color: #ccc;
-}
-
-.squish {
-	display: none;
-}
-.rowCollapse {
-	display: none;
-}
-.click {
-	display: none;
-}
-.scroll {
-	display: none;
 }
 
 .resultContent {
