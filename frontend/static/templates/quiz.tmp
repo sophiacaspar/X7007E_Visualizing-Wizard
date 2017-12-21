@@ -140,7 +140,10 @@
 <div class="row">
 	<div class="col-sm-4 ">
 		<div class="row tableInput">
-			<textarea id="tableInput" rows="5" cols="50" placeholder="Skriv in din tabell här. Separera kolumner med komman (,) och rader med radbrytning."></textarea>
+			<textarea id="tableInput" rows="5" cols="50" placeholder="Skriv in din tabell här. Separera kolumner med komman (,) och rader med radbrytning.">header1, header2, header3, header4
+row1col1, row1col2, row1col3, row1col4
+row2col1, row2col2, row2col3, row2col4
+row3col1, row3col2, row3col3, row3col4</textarea>
 			<br><button id="generateTableBtn" type="button" class="btn btn-info" onclick="getTable()">Generera tabell</button>
 		</div>
 		<div class="row">
@@ -150,23 +153,16 @@
 				<button class="tablinks" onclick="displayCode(event, 'JS')">JS</button>
 		</div>
 		<div class="tableOutput">
-			<div id="HTML" class="tabcontent">
-				<code>
-					html
-				</code>
-			</div>
+			<textarea id="HTML" class="tabcontent" rows="14" cols="55">
+				
+			</textarea>
 
-			<div id="CSS" class="tabcontent">
-				<code>
-					css
-				</code>
-			</div>
-			<div id="JS" class="tabcontent">
-				<code>
-					js
-				</code>
-			</div>
+			<textarea id="CSS" class="tabcontent" rows="14" cols="55">
 
+			</textarea>
+			<textarea id="JS" class="tabcontent" rows="14" cols="55">
+
+			</textarea>
 		</div>
 	</div>
 </div>

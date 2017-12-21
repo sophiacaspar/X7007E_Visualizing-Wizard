@@ -6,13 +6,11 @@
  *  Open source under the MIT License. 
  *
  *  Copyright © 2013 Gary Hepting. All rights reserved.
- *
 */
 
   $(document).ready(function() {
     $('table.responsive').responsiveTables();
   });
-
 
 (function() {
   var ResponsiveTable, delayedAdjust, responsiveTableIndex;

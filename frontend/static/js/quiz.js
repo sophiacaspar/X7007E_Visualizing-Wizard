@@ -91,6 +91,8 @@ function sendAnswers() {
           		
           		getResult(result.Result[0]);
           		getCode();
+          		getTable(result.Result[0]);
+          		displayCode(event, 'HTML');
           		displayResult();
           		
           		//viewResult(result);

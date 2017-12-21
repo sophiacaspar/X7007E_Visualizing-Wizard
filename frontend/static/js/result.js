@@ -20,6 +20,8 @@ function getTable(result) {
 	}
 
 	document.getElementById("exampleTable").innerHTML = newTable;
+	getCode(result, newTable);
+
 }
 
 function generateScrollTable(tableInput){
@@ -57,19 +59,18 @@ function generateScrollTable(tableInput){
 
 function generateSquishTable(tableInput){
 	var lines = tableInput.split('\n');
-	var newTable = "<table class='responsive' data-compression='6' data-min='8' data-max='16' cellpadding='.1em' cellspacing='.2em'>";
+	var newTable = "<table class='responsive' data-compression='6' data-min='8' data-max='16' cellpadding='.1em' cellspacing='.2em'>\n";
 
 	for (var i = 0; i < lines.length; i++) {
 		var columns = lines[i].split(',');
-		newTable += "<tr>";
+		newTable += "<tr>\n";
 
 		for (var j = 0; j < columns.length; j++) {
-			newTable += "<td>" + columns[j] + "</td>";
+			newTable += "&#9;<td>" + columns[j] + "</td>\n";
 		}
-			newTable += "</tr>";
+			newTable += "</tr>\n";
 	}
 	newTable += "</table>";
-
 	return newTable;
 }
 
@@ -164,9 +165,24 @@ function getResult(result) {
     document.getElementById("generateTableBtn").setAttribute('onclick', "getTable('" + result + "')");
 }
 
-function getCode(){
-	document.getElementById("CSS").innerHTML = squishCSS;
-
+function getCode(result, table){
+	var cssCode, jsCode;
+	if (result == "rowCollapse") {
+		cssCode = rowCollapseCSS;
+		jsCode = "";
+	} else if (result == "click") {
+		cssCode = clickCSS;
+		jsCode = clickJS;
+	} else if (result == "scroll") {
+		cssCode = scrollCSS;
+		jsCode = scrollJS;
+	} else {
+		cssCode = squishCSS;
+		jsCode = squishJS;
+	}
+	document.getElementById("CSS").innerHTML = cssCode;
+	document.getElementById("JS").innerHTML = jsCode;
+	document.getElementById("HTML").innerHTML = table;
 }
 
 
