@@ -90,7 +90,7 @@ function sendAnswers() {
           		//location.replace("/result");
           		
           		getResult(result.Result[0]);
-          		console.log(result.Result[0]);
+          		getCode();
           		displayResult();
           		
           		//viewResult(result);

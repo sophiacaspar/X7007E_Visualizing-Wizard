@@ -6,12 +6,18 @@ function displayResult(){
 }
 
 
-function getTable() {
+function getTable(result) {
 	var tableInput = document.getElementById("tableInput").value;
-	//var newTable = generateScrollTable(tableInput);
-	//var newTable = generateSquishTable(tableInput);
-	var newTable = generateRowCollapseTable(tableInput);
-	//var newTable = generateClickTable(tableInput);
+	var newTable;
+	if (result == "click") {
+		newTable = generateClickTable(tableInput);
+	} else if (result == "rowCollapse") {
+		newTable = generateRowCollapseTable(tableInput);
+	} else if (result == "scroll") {
+		newTable = generateScrollTable(tableInput);
+	} else {
+		newTable = generateSquishTable(tableInput);
+	}
 
 	document.getElementById("exampleTable").innerHTML = newTable;
 }
@@ -154,6 +160,13 @@ function getResult(result) {
     document.getElementById(result + "Explanation").style.display = "block";
     document.getElementById(result + "ProCon").style.display = "block";
     document.getElementById(result + "Think").style.display = "block";
+
+    document.getElementById("generateTableBtn").setAttribute('onclick', "getTable('" + result + "')");
+}
+
+function getCode(){
+	document.getElementById("CSS").innerHTML = squishCSS;
+
 }
 
 
