@@ -27,25 +27,13 @@ getResultFromQuiz(X, _, _, ans1, _, _, ans4, ans4, radkollaps):-
 	X \== ans2.
 
 %! klick pink
-getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, klick):-
-	(
-		Q == ans1
-		;
-		Q == ans2
-		;
-		Q == ans3
-	).
-
-%! klick
-getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, klick):-
-	X \== ans2,
-	Y \== ans1,
-	Z \== ans1,
+getResultFromQuiz(ans2, ans2, ans2, _, _, _, Q, ans3, klick):-
 	Q \== ans4
 	.
 
-%! skroll
-getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, skroll):-
+
+%! skroll & klick green1
+getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, Result):-
 	X \== ans2,
 	Y \== ans1,
 	Z \== ans1,
@@ -53,8 +41,23 @@ getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, skroll):-
 		Q == ans2
 		;
 		Q == ans3
-		)
-	.
+		),
+	(
+		Result = skroll
+		;
+		Result = klick
+		).
+
+%! skroll & klick green2
+getResultFromQuiz(X, Y, Z, _, _, _, ans4, ans4, Result):-
+	X \== ans2,
+	Y \== ans1,
+	Z \== ans1,
+	(
+		Result = skroll
+		;
+		Result = klick
+		).
 
 
 %! squish

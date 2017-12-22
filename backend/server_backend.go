@@ -155,25 +155,13 @@ func quizLogic() string{
 		X \== ans2.
 
 	%! klick pink
-	getResultFromQuiz(ans2, ans2, ans2, _, _, ans4, Q, ans3, click):-
-		(
-			Q == ans1
-			;
-			Q == ans2
-			;
-			Q == ans3
-		).
-
-	%! klick
-	getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, klick):-
-		X \== ans2,
-		Y \== ans1,
-		Z \== ans1,
+	getResultFromQuiz(ans2, ans2, ans2, _, _, _, Q, ans3, click):-
 		Q \== ans4
 		.
 
-	%! skroll
-	getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, skroll):-
+
+	%! skroll & klick green1
+	getResultFromQuiz(X, Y, Z, _, _, _, Q, ans3, Result):-
 		X \== ans2,
 		Y \== ans1,
 		Z \== ans1,
@@ -181,7 +169,24 @@ func quizLogic() string{
 			Q == ans2
 			;
 			Q == ans3
-		).
+			),
+		(
+			Result = scroll
+			;
+			Result = click
+			).
+
+	%! skroll & klick green2
+	getResultFromQuiz(X, Y, Z, _, _, _, ans4, ans4, Result):-
+		X \== ans2,
+		Y \== ans1,
+		Z \== ans1,
+		(
+			Result = scroll
+			;
+			Result = click
+			)
+		.
 
 
 	%! squish

@@ -24,6 +24,14 @@ function getTable(result) {
 
 }
 
+function displayUncertain(){
+
+}
+
+function displayTwoResults(secondResult){
+	
+}
+
 function generateScrollTable(tableInput){
 	var lines = tableInput.split('\n');
 	var newTable = "<div id='table-scroll' class='table-scroll'><div class='table-wrap'><table class='main-table'>";
