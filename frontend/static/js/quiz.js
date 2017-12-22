@@ -104,7 +104,7 @@ function sendAnswers() {
 
 function resultHandler(result){
 	var firstResult = result.Result[0];
-	if (firstResult == "null") {
+	if (firstResult == "uncertain") {
 		displayUncertain();
 		firstResult = "squish";
 	}

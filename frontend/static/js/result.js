@@ -19,7 +19,8 @@ function getTable(result) {
 		newTable = generateSquishTable(tableInput);
 	}
 
-	document.getElementById("exampleTable").innerHTML = newTable;
+	var instructionTable = "<b>Minska webbläsarens storlek för att se resultatet.</b><br><br>" + newTable;
+	document.getElementById("exampleTable").innerHTML = instructionTable;
 	getCode(result, newTable);
 
 }
@@ -30,33 +31,33 @@ function displayUncertain(){
 
 function generateScrollTable(tableInput){
 	var lines = tableInput.split('\n');
-	var newTable = "<div id='table-scroll' class='table-scroll'><div class='table-wrap'><table class='main-table'>";
+	var newTable = "<div id='table-scroll' class='table-scroll'>\n&#9;<div class='table-wrap'>\n&#9;<table class='main-table'>\n";
 
 	for (var i = 0; i < lines.length; i++) {
 		var columns = lines[i].split(',');
 		if (i == 0){
-			newTable += "<thead><tr>";
+			newTable += "<thead>\n&#9;<tr>\n";
 			for (var j = 0; j < columns.length; j++) {
 				if (j == 0) {
-					newTable += "<th class='fixed-side' scope='col'>" + columns[j] + "</th>";
+					newTable += "&#9;<th class='fixed-side' scope='col'>" + columns[j] + "</th>\n";
 				} else {
-					newTable += "<th scope='col'>" + columns[j] + "</th>";
+					newTable += "&#9;<th scope='col'>" + columns[j] + "</th>\n";
 				}
 			}
-			newTable += "</tr></thead><tbody>";
+			newTable += "</tr>\n</thead>\n<tbody>\n";
 		} else {
-			newTable += "<tr>";
+			newTable += "<tr>\n";
 			for (var j = 0; j < columns.length; j++) {
 				if (j == 0) {
-					newTable += "<td class='fixed-side'>" + columns[j] + "</td>";
+					newTable += "&#9;<td class='fixed-side'>" + columns[j] + "</td>\n";
 				} else {
-					newTable += "<td>" + columns[j] + "</td>";
+					newTable += "&#9;<td>" + columns[j] + "</td>\n";
 				}
 			}
-			newTable += "</tr>";
+			newTable += "</tr>\n";
 		}
 	}
-	newTable += "</tbody></table></div></div>";
+	newTable += "</tbody>\n</table>\n</div>\n</div>";
 
 	return newTable;
 }
@@ -80,22 +81,22 @@ function generateSquishTable(tableInput){
 
 function generateRowCollapseTable(tableInput){
 	var lines = tableInput.split('\n');
-	var newTable = "<table class='rwd-table'>";
+	var newTable = "<table class='rwd-table'>\n";
 
 		for (var i = 0; i < lines.length; i++) {
 			var columns = lines[i].split(',');
 			if (i == 0){
-				newTable += "<tr>";
+				newTable += "<tr>\n";
 				for (var j = 0; j < columns.length; j++) {
-					newTable += "<th>" + columns[j] + "</th>";
+					newTable += "&#9;<th>" + columns[j] + "</th>\n";
 				}
-				newTable += "</tr>";
+				newTable += "</tr>\n";
 			} else {
-				newTable += "<tr>";
+				newTable += "<tr>\n";
 				for (var j = 0; j < columns.length; j++) {
-					newTable += "<td data-th='" + lines[0].split(',')[j] + "'>" + columns[j] + "</td>";
+					newTable += "&#9;<td data-th='" + lines[0].split(',')[j] + "'>" + columns[j] + "</td>\n";
 				}
-				newTable += "</tr>";
+				newTable += "</tr>\n";
 			}
 	}
 	newTable += "</table>";
@@ -105,37 +106,37 @@ function generateRowCollapseTable(tableInput){
 
 function generateClickTable(tableInput){
 	var lines = tableInput.split('\n');
-	var newTable = "<table class='tablesaw tablesaw-swipe' data-tablesaw-mode='swipe' data-tablesaw-minimap>";
+	var newTable = "<table class='tablesaw tablesaw-swipe' data-tablesaw-mode='swipe' data-tablesaw-minimap>\n";
 
 	for (var i = 0; i < lines.length; i++) {
 		var columns = lines[i].split(',');
 		if (i == 0){
-			newTable += "<thead><tr>";
+			newTable += "<thead>\n&#9;<tr>\n";
 			for (var j = 0; j < columns.length; j++) {
 				if (j == 0) {
-					newTable += "<th class='title tablesaw-swipe-cellpersist' scope='col' data-tablesaw-priority='persist'>" + columns[j] + "</th>";
+					newTable += "&#9;<th class='title tablesaw-swipe-cellpersist' scope='col' data-tablesaw-priority='persist'>" + columns[j] + "</th>\n";
 				} else if (j == 1) {
-					newTable += "<th scope='col' class>" + columns[j] + "</th>"
+					newTable += "&#9;<th scope='col' class>" + columns[j] + "</th>\n"
 				} else {
-					newTable += "<th scope='col' class='tablesaw-swipe-cellhidden'>" + columns[j] + "</th>";
+					newTable += "&#9;<th scope='col' class='tablesaw-swipe-cellhidden'>" + columns[j] + "</th>\n";
 				}
 			}
-			newTable += "</tr></thead><tbody>";
+			newTable += "</tr>\n</thead>\n<tbody>\n";
 		} else {
-			newTable += "<tr>";
+			newTable += "<tr>\n";
 			for (var j = 0; j < columns.length; j++) {
 				if (j == 0) {
-					newTable += "<td class='title tablesaw-swipe-cellpersist'>" + columns[j] + "</td>";
+					newTable += "&#9;<td class='title tablesaw-swipe-cellpersist'>" + columns[j] + "</td>\n";
 				} else if (j == 1) {
-					newTable += "<td class>" + columns[j] + "</td>"
+					newTable += "&#9;<td class>" + columns[j] + "</td>\n"
 				} else {
-					newTable += "<td scope='col' class='tablesaw-swipe-cellhidden'>" + columns[j] + "</td>";
+					newTable += "&#9;<td scope='col' class='tablesaw-swipe-cellhidden'>" + columns[j] + "</td>\n";
 				}
 			}
-			newTable += "</tr>";
+			newTable += "</tr>\n";
 		}
 	}
-	newTable += "</tbody></table>";
+	newTable += "</tbody>\n</table>";
 
 	return newTable;
 }

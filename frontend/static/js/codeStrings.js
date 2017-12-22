@@ -220,10 +220,10 @@ var scrollCSS = `
 /* https://codepen.io/paulobrien/pen/gWoVzN */
 
 .table-scroll {
-  position:relative;
-  margin:auto;
-  overflow:hidden;
-  border:1px solid #000;
+    position:relative;
+    margin:auto;
+    overflow:hidden;
+    border:1px solid #000;
 }
 
 @media (min-width: 1000px) {
@@ -236,36 +236,118 @@ var scrollCSS = `
 }
 
 .table-wrap {
-  width:100%;
-  overflow:auto;
+    width:100%;
+    overflow:auto;
 }
 .table-scroll table {
-  width: 100%;
-  margin:auto;
-  border-collapse:separate;
-  border-spacing:0;
+    width: 100%;
+    margin:auto;
+    border-collapse:separate;
+    border-spacing:0;
 }
 
 .table-scroll th, .table-scroll td {
-  padding:.8em .8em;
-  border: 1px solid black;
-  background:white;
-  white-space:nowrap;
-  vertical-align:top;
+    padding:.8em .8em;
+    border: 1px solid black;
+    background:white;
+    white-space:nowrap;
+    vertical-align:top;
 }
 .table-scroll td:nth-child(even), .table-scroll th:nth-child(even) {
   background: #dddddd;
 }
 
-col {
-  width: 5px;
+.clone {
+    position:absolute;
+    top:0;
+    left:0;
+    pointer-events:none;
+    width: 5px;
 }
+.clone th, .clone td {
+    visibility:hidden
+}
+.clone td, .clone th {
+    border-color:transparent
+}
+.clone tbody th {
+    visibility:visible;
+    color:black;
+}
+.clone .fixed-side {
+    border:1px solid #000;
+    background:white;
+    visibility:visible;
+}
+.clone thead {
+    background:transparent;
+}
+
+col {
+    width: 5px;
+}
+
 `;
 
 var scrollJS = `
 jQuery(document).ready(function() {
    jQuery(".main-table").clone(true).appendTo('#table-scroll').addClass('clone');   
  });
+`;
+
+var scrollHTML = `
+<div id="table-scroll" class="table-scroll">
+    <div class="table-wrap">
+        <table class="main-table">
+        <thead>
+            <tr>
+                <th class="fixed-side" scope="col">Heading 1</th>
+                <th scope="col">Heading 2</th>
+                <th scope="col">Heading 3</th>
+                <th scope="col">Heading 4</th>
+                <th scope="col">Heading 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="fixed-side" >Row 1, Col 1</td>
+                <td>Row 1, Col 2</td>
+                <td>Row 1, Col 3</td>
+                <td>Row 1, Col 4</td>
+                <td>Row 1, Col 5</td>
+            </tr>
+            <tr>
+                <td class="fixed-side" >Row 2, Col 1</td>
+                <td>Row 2, Col 2</td>
+                <td>Row 2, Col 3</td>
+                <td>Row 2, Col 4</td>
+                <td>Row 2, Col 5</td>
+            </tr>
+            <tr>
+                <td class="fixed-side" >Row 3, Col 1</td>
+                <td>Row 3, Col 2</td>
+                <td>Row 3, Col 3</td>
+                <td>Row 3, Col 4</td>
+                <td>Row 3, Col 5</td>
+            </tr>
+            <tr>
+                <td class="fixed-side" >Row 4, Col 1</td>
+                <td>Row 4, Col 2</td>
+                <td>Row 4, Col 3</td>
+                <td>Row 4, Col 4</td>
+                <td>Row 4, Col 5</td>
+            </tr>
+            <tr>
+                <td class="fixed-side" >Row 5, Col 1</td>
+                <td>Row 5, Col 2</td>
+                <td>Row 5, Col 3</td>
+                <td>Row 5, Col 4</td>
+                <td>Row 5, Col 5</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 `;
 
 var clickCSS = `
@@ -290,54 +372,54 @@ var clickJS = `
 `;
 
 var clickHTML = `
-                <table class="tablesaw tablesaw-swipe" data-tablesaw-mode="swipe" data-tablesaw-minimap>
-                    <thead>
-                        <tr>
-                            <th class="title tablesaw-swipe-cellpersist" scope="col" data-tablesaw-priority="persist">Heading 1</th>
-                            <th scope="col" class>Heading 2</th>
-                            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 3</th>
-                            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 4</th>
-                            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 5</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="title tablesaw-swipe-cellpersist">Row 1, Col 1</td>
-                            <td class>Row 1, Col 2</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 3</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 4</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 5</td>
-                        </tr>
-                        <tr>
-                            <td class="title tablesaw-swipe-cellpersist">Row 2, Col 1</td>
-                            <td class>Row 2, Col 2</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 3</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 4</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 5</td>
-                        </tr>
-                        <tr>
-                            <td class="title tablesaw-swipe-cellpersist">Row 3, Col 1</td>
-                            <td class>Row 3, Col 2</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 3</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 4</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 5</td>
-                        </tr>
-                        <tr>
-                            <td class="title tablesaw-swipe-cellpersist">Row 4, Col 1</td>
-                            <td class>Row 4, Col 2</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 3</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 4</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 5</td>
-                        </tr>
-                        <tr>
-                            <td class="title tablesaw-swipe-cellpersist">Row 5, Col 1</td>
-                            <td class>Row 5, Col 2</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 3</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 4</td>
-                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 5</td>
-                        </tr>
-                    </tbody>
-                </table>
+<table class="tablesaw tablesaw-swipe" data-tablesaw-mode="swipe" data-tablesaw-minimap>
+    <thead>
+        <tr>
+            <th class="title tablesaw-swipe-cellpersist" scope="col" data-tablesaw-priority="persist">Heading 1</th>
+            <th scope="col" class>Heading 2</th>
+            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 3</th>
+            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 4</th>
+            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 5</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="title tablesaw-swipe-cellpersist">Row 1, Col 1</td>
+            <td class>Row 1, Col 2</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 3</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 4</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 5</td>
+        </tr>
+        <tr>
+            <td class="title tablesaw-swipe-cellpersist">Row 2, Col 1</td>
+            <td class>Row 2, Col 2</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 3</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 4</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 5</td>
+        </tr>
+        <tr>
+            <td class="title tablesaw-swipe-cellpersist">Row 3, Col 1</td>
+            <td class>Row 3, Col 2</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 3</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 4</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 5</td>
+        </tr>
+        <tr>
+            <td class="title tablesaw-swipe-cellpersist">Row 4, Col 1</td>
+            <td class>Row 4, Col 2</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 3</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 4</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 5</td>
+        </tr>
+        <tr>
+            <td class="title tablesaw-swipe-cellpersist">Row 5, Col 1</td>
+            <td class>Row 5, Col 2</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 3</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 4</td>
+            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 5</td>
+        </tr>
+    </tbody>
+</table>
                 `;
 
 

@@ -45,19 +45,25 @@ func ResultHandler(w http.ResponseWriter, r *http.Request) {
 func SquishHandler(w http.ResponseWriter, r *http.Request) {
 	title := "Squish"
 	s := &Solution{title}
-    template.Must(template.ParseFiles("static/index.html", "static/templates/squish.tmp")).Execute(w, s)
+    template.Must(template.ParseFiles("static/index.html", "static/templates/tables/squish.tmp")).Execute(w, s)
 }
 
 func RowCollapseHandler(w http.ResponseWriter, r *http.Request) {
 	title := "Radkollaps"
 	s := &Solution{title}
-    template.Must(template.ParseFiles("static/index.html", "static/templates/rowCollapse.tmp")).Execute(w, s)
+    template.Must(template.ParseFiles("static/index.html", "static/templates/tables/rowCollapse.tmp")).Execute(w, s)
 }
 
 func ClickHandler(w http.ResponseWriter, r *http.Request) {
 	title := "Klick"
 	s := &Solution{title}
-    template.Must(template.ParseFiles("static/index.html", "static/templates/click.tmp")).Execute(w, s)
+    template.Must(template.ParseFiles("static/index.html", "static/templates/tables/click.tmp")).Execute(w, s)
+}
+
+func ScrollHandler(w http.ResponseWriter, r *http.Request) {
+	title := "Skroll"
+	s := &Solution{title}
+    template.Must(template.ParseFiles("static/index.html", "static/templates/tables/scroll.tmp")).Execute(w, s)
 }
 
 /*****************************************
@@ -72,8 +78,8 @@ func startWebserver() {
 	http.HandleFunc("/result", ResultHandler)
 	http.HandleFunc("/squish", SquishHandler)
 	http.HandleFunc("/rowCollapse", RowCollapseHandler)
-	http.HandleFunc("/scroll", ClickHandler)
-	http.HandleFunc("/click", ResultHandler)
+	http.HandleFunc("/scroll", ScrollHandler)
+	http.HandleFunc("/click", ClickHandler)
 
 	fmt.Println("running on localhost:1025")
 	log.Fatal(http.ListenAndServe("localhost:1025", nil))

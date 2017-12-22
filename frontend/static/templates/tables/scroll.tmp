@@ -1,0 +1,128 @@
+{{define "Title"}}
+	{{ .Title}}
+{{end}}
+
+{{define "Body"}}
+<!DOCTYPE html>
+<html>
+<script src="/static/js/exampleSolutions.js"></script> 
+<script src="/static/js/codeStrings.js"></script> 
+<script src="/static/js/tables/scroll.js"></script> 
+<link href="/static/css/tables/scroll.css" rel="stylesheet">
+
+
+<body onload="getScrollCode(), displaySolutionCode(event, 'scrollHTML')">
+<div id="scroll">
+	<div class="row">
+		<h1>KLICK</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-4 ">
+			<div class="textbox">
+				<b>Det här innebär lösningen:</b><br>
+				Skroll innebär att vissa kolumner göms när webbläsaren öppnas på en liten skärm. För att kunna läsa resten av innehållet måste användaren skrolla/swipa fram och tillbaka. Lösningen är bra vid jämförelse av få kolumner.
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="textbox">
+				<b>+</b> Skroll är bra när en kolumn ska jämföras i taget.<br>
+				<b>+</b> Skroll är trevlig att använda på mobiltelefoner.<br>
+				<b>-</b> Skroll gör att det kan bli svårt att komma ihåg all data när det är för många kolumner att skrolla mellan. <br>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="textbox">
+				<b>Tänk på att:</b><br>
+				&#10148; Fundera på hur innehållet ska jämföras. En kolumn i taget är optimalt för skroll.<br><br>
+				&#10148; Använd varken för få eller för många kolumner. Runt 5-7 blir rätt lagom till skroll-lösningen.<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="row instructionbox">
+				Minska webbläsarens storlek för att se resultatet.
+			</div>
+			<div class="row">
+				<div class="tab">
+					<button class="tablinks" onscroll="displaySolutionCode(event, 'scrollHTML')">HTML</button>
+					<button class="tablinks" onscroll="displaySolutionCode(event, 'scrollCSS')">CSS</button>
+					<button class="tablinks" onscroll="displaySolutionCode(event, 'scrollJS')">JS</button>
+				</div>
+				<div class="tableOutput">
+					<textarea id="scrollHTML" class="tabcontent" rows="25" cols="55"></textarea>
+					<textarea id="scrollCSS" class="tabcontent" rows="25" cols="55"></textarea>
+					<textarea id="scrollJS" class="tabcontent" rows="25" cols="55"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-8">
+			<div class="tablebox">
+				<div id="table-scroll" class="table-scroll">
+				  	<div class="table-wrap">
+					    <table class="main-table">
+					    <thead>
+					        <tr>
+							    <th class="fixed-side" scope="col">Heading 1</th>
+							    <th scope="col">Heading 2</th>
+							    <th scope="col">Heading 3</th>
+							    <th scope="col">Heading 4</th>
+							    <th scope="col">Heading 5</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="fixed-side" >Row 1, Col 1</td>
+								<td>Row 1, Col 2</td>
+								<td>Row 1, Col 3</td>
+								<td>Row 1, Col 4</td>
+								<td>Row 1, Col 5</td>
+							</tr>
+							<tr>
+								<td class="fixed-side" >Row 2, Col 1</td>
+								<td>Row 2, Col 2</td>
+								<td>Row 2, Col 3</td>
+								<td>Row 2, Col 4</td>
+								<td>Row 2, Col 5</td>
+							</tr>
+							<tr>
+								<td class="fixed-side" >Row 3, Col 1</td>
+								<td>Row 3, Col 2</td>
+								<td>Row 3, Col 3</td>
+								<td>Row 3, Col 4</td>
+								<td>Row 3, Col 5</td>
+							</tr>
+							<tr>
+								<td class="fixed-side" >Row 4, Col 1</td>
+								<td>Row 4, Col 2</td>
+								<td>Row 4, Col 3</td>
+								<td>Row 4, Col 4</td>
+								<td>Row 4, Col 5</td>
+							</tr>
+							<tr>
+								<td class="fixed-side" >Row 5, Col 1</td>
+								<td>Row 5, Col 2</td>
+								<td>Row 5, Col 3</td>
+								<td>Row 5, Col 4</td>
+								<td>Row 5, Col 5</td>
+							</tr>
+					        </tbody>
+					    </table>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+{{end}}

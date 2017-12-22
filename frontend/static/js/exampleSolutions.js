@@ -29,3 +29,9 @@ function getClickCode(){
 	document.getElementById("clickJS").innerHTML = clickJS;
 	document.getElementById("clickHTML").innerHTML = clickHTML;
 }
+
+function getScrollCode(){
+	document.getElementById("scrollCSS").innerHTML = scrollCSS;
+	document.getElementById("scrollJS").innerHTML = scrollJS;
+	document.getElementById("scrollHTML").innerHTML = scrollHTML;
+}

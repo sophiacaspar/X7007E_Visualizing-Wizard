@@ -212,6 +212,8 @@ func quizLogic() string{
 			;
 			Z == ans4
 		).
+	%! uncertain
+	getResultFromQuiz(_, _, _, _, _, _, _, _, uncertain).
 
 	`
 }

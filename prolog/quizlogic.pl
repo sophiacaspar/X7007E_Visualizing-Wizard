@@ -84,5 +84,6 @@ getResultFromQuiz(_, _, X, _, _, _, Y, Z, squish):-
 		Z == ans4
 	).
 
-
+%! uncertain
+getResultFromQuiz(_, _, _, _, _, _, _, _, uncertain).
 

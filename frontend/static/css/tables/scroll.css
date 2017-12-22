@@ -38,6 +38,32 @@
   background: #dddddd;
 }
 
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+	width: 5px;
+}
+.clone th, .clone td {
+	visibility:hidden
+}
+.clone td, .clone th {
+	border-color:transparent
+}
+.clone tbody th {
+	visibility:visible;
+	color:black;
+}
+.clone .fixed-side {
+	border:1px solid #000;
+	background:white;
+	visibility:visible;
+}
+.clone thead {
+	background:transparent;
+}
+
 col {
 	width: 5px;
 }
