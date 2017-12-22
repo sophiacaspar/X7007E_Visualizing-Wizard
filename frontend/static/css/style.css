@@ -13,7 +13,7 @@ code {
 }
 
 .btn-container {
-	padding: 170px 0;
+	padding: 160px 0;
 }
 
 h1 {
@@ -46,7 +46,37 @@ h1 {
     width: 350px;
     height: 150px;
     margin: 10px;
-    padding: 10px;
+    padding: 5px;
+}
+
+.infobox {
+	background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    min-width: 350px;
+    margin: 10px;
+    padding: 40px;
+}
+
+.instructionbox {
+	background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+    margin: 10px;
+    padding-top: 35px;
+    height: 88px;
+
+}
+
+.tablebox {
+	background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    vertical-align: top;
+    min-width: 350px;
+    margin: 10px;
+    padding: 20px;
+    min-height: 405px;
 }
 
 .resultInfo {
@@ -87,6 +117,12 @@ h1 {
 @media (min-width: 680px) {
   .generatedTable {
     width: 720px;
+  }
+  .tablebox {
+  	width: 740px;
+  }
+  .infobox {
+  	width: 600px;
   }
 }
 

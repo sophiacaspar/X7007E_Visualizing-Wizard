@@ -1,0 +1,127 @@
+{{define "Title"}}
+	{{ .Title}}
+{{end}}
+
+{{define "Body"}}
+<!DOCTYPE html>
+<html>
+<script src="/static/js/exampleSolutions.js"></script> 
+<script src="/static/js/codeStrings.js"></script> 
+<script src="/static/js/tables/tablesaw.jquery.js"></script>
+<script src="/static/js/tables/tablesaw-init.js"></script>
+<link rel="stylesheet" href="/static/css/tables/click.css">
+<link rel="stylesheet" href="/static/css/tables/tablesaw.css">
+
+
+<body onload="getClickCode(), displaySolutionCode(event, 'clickHTML')">
+<div id="click">
+	<div class="row">
+		<h1>KLICK</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-4 ">
+			<div class="textbox">
+				<b>Det här innebär lösningen:</b><br>
+				Klick innebär att vissa kolumner göms när webbläsaren öppnas på en liten skärm. För att kunna läsa resten av innehållet måste användaren klicka sig fram och tillbaka via en knapp. Lösningen är bra vid jämförelse av få kolumner.
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="textbox">
+				<b>Fördelar/nackdelar:</b><br>
+				<b>+</b> Klick är bra vid jämförelse av mindre datamängder.<br>
+				<b>-</b> Klick gör att det kan bli svårt att komma ihåg all data när det är för många kolumner att klicka mellan. <br>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="textbox">
+				<b>Tänk på att:</b><br>
+				&#10148; Fundera på hur innehållet ska jämföras. En kolumn i taget är optimalt för klick.<br><br>
+				&#10148; Använd varken för få eller för många kolumner. Runt 5-7 blir rätt lagom till klick-lösningen.<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="row instructionbox">
+				Minska webbläsarens storlek för att se resultatet.
+			</div>
+			<div class="row">
+				<div class="tab">
+					<button class="tablinks" onclick="displaySolutionCode(event, 'clickHTML')">HTML</button>
+					<button class="tablinks" onclick="displaySolutionCode(event, 'clickCSS')">CSS</button>
+					<button class="tablinks" onclick="displaySolutionCode(event, 'clickJS')">JS</button>
+				</div>
+				<div class="tableOutput">
+					<textarea id="clickHTML" class="tabcontent" rows="25" cols="55"></textarea>
+					<textarea id="clickCSS" class="tabcontent" rows="25" cols="55"></textarea>
+					<textarea id="clickJS" class="tabcontent" rows="25" cols="55"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-8">
+			<div class="tablebox">
+				<table class="tablesaw tablesaw-swipe" data-tablesaw-mode="swipe" data-tablesaw-minimap>
+					<thead>
+						<tr>
+							<th class="title tablesaw-swipe-cellpersist" scope="col" data-tablesaw-priority="persist">Heading 1</th>
+						    <th scope="col" class>Heading 2</th>
+						    <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 3</th>
+						    <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 4</th>
+						    <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 5</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="title tablesaw-swipe-cellpersist">Row 1, Col 1</td>
+							<td class>Row 1, Col 2</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 3</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 4</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 5</td>
+						</tr>
+						<tr>
+							<td class="title tablesaw-swipe-cellpersist">Row 2, Col 1</td>
+							<td class>Row 2, Col 2</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 3</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 4</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 5</td>
+						</tr>
+						<tr>
+							<td class="title tablesaw-swipe-cellpersist">Row 3, Col 1</td>
+							<td class>Row 3, Col 2</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 3</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 4</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 5</td>
+						</tr>
+						<tr>
+							<td class="title tablesaw-swipe-cellpersist">Row 4, Col 1</td>
+							<td class>Row 4, Col 2</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 3</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 4</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 5</td>
+						</tr>
+						<tr>
+							<td class="title tablesaw-swipe-cellpersist">Row 5, Col 1</td>
+							<td class>Row 5, Col 2</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 3</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 4</td>
+							<td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 5</td>
+						</tr>
+					</tbody>
+				</table>
+			
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+{{end}}

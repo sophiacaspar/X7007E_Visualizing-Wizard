@@ -1,0 +1,120 @@
+{{define "Title"}}
+	{{ .Title}}
+{{end}}
+
+{{define "Body"}}
+<!DOCTYPE html>
+<html>
+<script src="/static/js/exampleSolutions.js"></script> 
+<script src="/static/js/codeStrings.js"></script> 
+<link rel="stylesheet" href="/static/css/tables/rowCollapse.css">
+<body onload="getRowCollapseCode(), displaySolutionCode(event, 'rowCollapseHTML')">
+<div id="rowCollapse">
+	<div class="row">
+		<h1>RADKOLLAPS</h1>
+	</div>
+	<div class="row">
+		<div class="col-sm-4 ">
+			<div class="textbox">
+				<b>Det här innebär lösningen:</b><br>
+				Radkollaps lägger varje rad i en egen ruta med tillhörande rubrik. Varje ruta hamnar då ovanpå varandra på små skärmar. Lösningen är bra för mindre datamängder och bör ej användas när innehållet ska jämföras.
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="textbox">
+				<b>Fördelar/nackdelar:</b><br>
+				<b>+</b> Raskollaps är tilltalande och går fort att läsa. <br>
+				<b>+</b> Radkollaps är bra när en specifik data ska läsas.<br>
+				<b>-</b> Radkollaps är ej bra på jämförelse och kan ej hantera för mycket data.<br>
+				<b>-</b> Radkollaps är bökig när det finns för många alternativ.
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="textbox">
+				<b>Tänk på att:</b><br>
+				&#10148; Undvik både för många rader och kolumner.<br><br>
+				&#10148; Använd inte radkollaps om innehållet i tabellen ska jämföras.<br>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="row instructionbox">
+				Minska webbläsarens storlek för att se resultatet.
+			</div>
+			<div class="row">
+				<div class="tab">
+					<button class="tablinks" onclick="displaySolutionCode(event, 'rowCollapseHTML')">HTML</button>
+					<button class="tablinks" onclick="displaySolutionCode(event, 'rowCollapseCSS')">CSS</button>
+					<button class="tablinks" onclick="displaySolutionCode(event, 'rowCollapseJS')">JS</button>
+				</div>
+				<div class="tableOutput">
+					<textarea id="rowCollapseHTML" class="tabcontent" rows="25" cols="55"></textarea>
+					<textarea id="rowCollapseCSS" class="tabcontent" rows="25" cols="55"></textarea>
+					<textarea id="rowCollapseJS" class="tabcontent" rows="25" cols="55"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-8">
+			<div class="tablebox">
+				<table class="rwd-table">
+					<tr>
+						<th>Heading 1</th>
+						<th>Heading 2</th>
+						<th>Heading 3</th>
+						<th>Heading 4</th>
+						<th>Heading 5</th>
+					</tr>
+					<tr>
+						<td data-th="Heading 1">Row 1, Col 1</td>
+						<td data-th="Heading 2">Row 1, Col 2</td>
+						<td data-th="Heading 3">Row 1, Col 3</td>
+						<td data-th="Heading 4">Row 1, Col 4</td>
+						<td data-th="Heading 5">Row 1, Col 5</td>
+					</tr>
+					<tr>
+						<td data-th="Heading 1">Row 2, Col 1</td>
+						<td data-th="Heading 2">Row 2, Col 2</td>
+						<td data-th="Heading 3">Row 2, Col 3</td>
+						<td data-th="Heading 4">Row 2, Col 4</td>
+						<td data-th="Heading 5">Row 2, Col 5</td>
+					</tr>
+					<tr>
+						<td data-th="Heading 1">Row 3, Col 1</td>
+						<td data-th="Heading 2">Row 3, Col 2</td>
+						<td data-th="Heading 3">Row 3, Col 3</td>
+						<td data-th="Heading 4">Row 3, Col 4</td>
+						<td data-th="Heading 5">Row 3, Col 5</td>
+					</tr>
+					<tr>
+						<td data-th="Heading 1">Row 4, Col 1</td>
+						<td data-th="Heading 2">Row 4, Col 2</td>
+						<td data-th="Heading 3">Row 4, Col 3</td>
+						<td data-th="Heading 4">Row 4, Col 4</td>
+						<td data-th="Heading 5">Row 4, Col 5</td>
+					</tr>
+					<tr>
+						<td data-th="Heading 1">Row 5, Col 1</td>
+						<td data-th="Heading 2">Row 5, Col 2</td>
+						<td data-th="Heading 3">Row 5, Col 3</td>
+						<td data-th="Heading 4">Row 5, Col 4</td>
+						<td data-th="Heading 5">Row 5, Col 5</td>
+					</tr>
+				</table>
+			
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+{{end}}

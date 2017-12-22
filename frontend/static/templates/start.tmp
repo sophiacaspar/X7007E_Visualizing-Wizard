@@ -6,7 +6,11 @@
 <html>
 <body>
 	<div class="row">
-		<h1>Welcome to the Visualizing Wizard!</h1>
+		<h1>Välkommen till Visualizing Wizard!</h1>
+		<div class="infobox">
+			Det här verktyget är till för dig som ska utveckla en hemsida med tabeller och vill ha hjälp med valet av tabell-lösning för mindre skärmar. Svara på några frågor om hur tabellen ska se ut och få därefter ett resultat genererat med en tabell-lösning som passar dina behov.
+		</div>
+		
 	</div>
 		<div class="row">
 

@@ -169,6 +169,53 @@ var squishJS = `
 }).call(this);
 `;
 
+var squishHTML = `
+<table class="responsive" data-compression="6" data-min="8" data-max="16" cellpadding=".1em" cellspacing=".2em">
+          <tr>
+              <th>Heading 1</th>
+              <th>Heading 2</th>
+              <th>Heading 3</th>
+              <th>Heading 4</th>
+              <th>Heading 5</th>
+          </tr>
+          <tr>
+            <td>Row 1, Col 1</td>
+            <td>Row 1, Col 2</td>
+            <td>Row 1, Col 3</td>
+            <td>Row 1, Col 4</td>
+            <td>Row 1, Col 5</td>
+          </tr>
+          <tr>
+            <td>Row 2, Col 1</td>
+            <td>Row 2, Col 2</td>
+            <td>Row 2, Col 3</td>
+            <td>Row 2, Col 4</td>
+            <td>Row 2, Col 5</td>
+          </tr>
+          <tr>
+            <td>Row 3, Col 1</td>
+            <td>Row 3, Col 2</td>
+            <td>Row 3, Col 3</td>
+            <td>Row 3, Col 4</td>
+            <td>Row 3, Col 5</td>
+          </tr>
+          <tr>
+            <td>Row 4, Col 1</td>
+            <td>Row 4, Col 2</td>
+            <td>Row 4, Col 3</td>
+            <td>Row 4, Col 4</td>
+            <td>Row 4, Col 5</td>
+          </tr>
+          <tr>
+            <td>Row 5, Col 1</td>
+            <td>Row 5, Col 2</td>
+            <td>Row 5, Col 3</td>
+            <td>Row 5, Col 4</td>
+            <td>Row 5, Col 5</td>
+          </tr>
+        </table>
+        `;
+
 var scrollCSS = `
 /* https://codepen.io/paulobrien/pen/gWoVzN */
 
@@ -241,6 +288,57 @@ var clickJS = `
   * https://github.com/filamentgroup/tablesaw
   * Copyright (c) 2017 Filament Group; Licensed MIT */
 `;
+
+var clickHTML = `
+                <table class="tablesaw tablesaw-swipe" data-tablesaw-mode="swipe" data-tablesaw-minimap>
+                    <thead>
+                        <tr>
+                            <th class="title tablesaw-swipe-cellpersist" scope="col" data-tablesaw-priority="persist">Heading 1</th>
+                            <th scope="col" class>Heading 2</th>
+                            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 3</th>
+                            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 4</th>
+                            <th scope="col" class=" tablesaw-swipe-cellhidden">Heading 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="title tablesaw-swipe-cellpersist">Row 1, Col 1</td>
+                            <td class>Row 1, Col 2</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 3</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 4</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 1, Col 5</td>
+                        </tr>
+                        <tr>
+                            <td class="title tablesaw-swipe-cellpersist">Row 2, Col 1</td>
+                            <td class>Row 2, Col 2</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 3</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 4</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 2, Col 5</td>
+                        </tr>
+                        <tr>
+                            <td class="title tablesaw-swipe-cellpersist">Row 3, Col 1</td>
+                            <td class>Row 3, Col 2</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 3</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 4</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 3, Col 5</td>
+                        </tr>
+                        <tr>
+                            <td class="title tablesaw-swipe-cellpersist">Row 4, Col 1</td>
+                            <td class>Row 4, Col 2</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 3</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 4</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 4, Col 5</td>
+                        </tr>
+                        <tr>
+                            <td class="title tablesaw-swipe-cellpersist">Row 5, Col 1</td>
+                            <td class>Row 5, Col 2</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 3</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 4</td>
+                            <td scope="col" class=" tablesaw-swipe-cellhidden">Row 5, Col 5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `;
 
 
 var rowCollapseCSS = `
@@ -319,7 +417,54 @@ var rowCollapseCSS = `
 }
 `;
 
+var rowCollapseHTML = `
+        <table class="rwd-table">
+          <tr>
+            <th>Heading 1</th>
+            <th>Heading 2</th>
+            <th>Heading 3</th>
+            <th>Heading 4</th>
+            <th>Heading 5</th>
+          </tr>
+          <tr>
+            <td data-th="Heading 1">Row 1, Col 1</td>
+            <td data-th="Heading 2">Row 1, Col 2</td>
+            <td data-th="Heading 3">Row 1, Col 3</td>
+            <td data-th="Heading 4">Row 1, Col 4</td>
+            <td data-th="Heading 5">Row 1, Col 5</td>
+          </tr>
+          <tr>
+            <td data-th="Heading 1">Row 2, Col 1</td>
+            <td data-th="Heading 2">Row 2, Col 2</td>
+            <td data-th="Heading 3">Row 2, Col 3</td>
+            <td data-th="Heading 4">Row 2, Col 4</td>
+            <td data-th="Heading 5">Row 2, Col 5</td>
+          </tr>
+          <tr>
+            <td data-th="Heading 1">Row 3, Col 1</td>
+            <td data-th="Heading 2">Row 3, Col 2</td>
+            <td data-th="Heading 3">Row 3, Col 3</td>
+            <td data-th="Heading 4">Row 3, Col 4</td>
+            <td data-th="Heading 5">Row 3, Col 5</td>
+          </tr>
+          <tr>
+            <td data-th="Heading 1">Row 4, Col 1</td>
+            <td data-th="Heading 2">Row 4, Col 2</td>
+            <td data-th="Heading 3">Row 4, Col 3</td>
+            <td data-th="Heading 4">Row 4, Col 4</td>
+            <td data-th="Heading 5">Row 4, Col 5</td>
+          </tr>
+          <tr>
+            <td data-th="Heading 1">Row 5, Col 1</td>
+            <td data-th="Heading 2">Row 5, Col 2</td>
+            <td data-th="Heading 3">Row 5, Col 3</td>
+            <td data-th="Heading 4">Row 5, Col 4</td>
+            <td data-th="Heading 5">Row 5, Col 5</td>
+          </tr>
+        </table>
+        `;
 
+var rowCollapseJS = ` `;
 
 
 
