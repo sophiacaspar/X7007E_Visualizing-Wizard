@@ -25,11 +25,7 @@ function getTable(result) {
 }
 
 function displayUncertain(){
-
-}
-
-function displayTwoResults(secondResult){
-	
+	document.getElementById("resultGreeting").innerHTML = "Dina svar var svåra att generera ett resultat till och däför rekommenderas tabell-lösningen:"
 }
 
 function generateScrollTable(tableInput){

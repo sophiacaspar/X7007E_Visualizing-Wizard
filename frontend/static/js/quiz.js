@@ -86,16 +86,8 @@ function sendAnswers() {
             if (xhr.status == 200) {
         		var result = event.target.response;
           		result = JSON.parse(result);
-
-          		//location.replace("/result");
           		
-          		getResult(result.Result[0]);
-          		getCode();
-          		getTable(result.Result[0]);
-          		displayCode(event, 'HTML');
-          		displayResult();
-          		
-          		//viewResult(result);
+          		resultHandler(result);
           		
             } else {
               alert("Error! Upload failed");
@@ -109,6 +101,20 @@ function sendAnswers() {
           xhr.setRequestHeader("Content-Type", "application/json");
           xhr.send(JSON.stringify(answersFromUser));
       }
+
+function resultHandler(result){
+	var firstResult = result.Result[0];
+	if (firstResult == "null") {
+		displayUncertain();
+		firstResult = "squish";
+	}
+
+	getResult(firstResult);
+	getCode();
+	getTable(firstResult);
+	displayCode(event, 'HTML');
+	displayResult();
+}
 
 
 

@@ -69,7 +69,7 @@
 <!-- ------------------------------- RESULT ---------------------- -->
 <div id="result" style="display:none;">
 	<div class="row">
-		<h3>Baserat på dina svar rekommenderas tabell-lösningen:</h3>
+		<h3 id="resultGreeting">Baserat på dina svar rekommenderas tabell-lösningen:</h3>
 		<h1 class="resultContent" id="squishResult">SQUISH</h1>
 		<h1 class="resultContent" id="rowCollapseResult">RADKOLLAPS</h1>
 		<h1 class="resultContent" id="clickResult">KLICK</h1>
