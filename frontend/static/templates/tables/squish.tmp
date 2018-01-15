@@ -59,7 +59,7 @@
 
 		<div class="col-sm-8">
 			<div class="tablebox">
-				<table class="responsive" data-compression="6" data-min="8" data-max="16" cellpadding=".1em" cellspacing=".2em">
+				<table class="responsive" data-compression="6" data-min="8" data-max="16" cellpadding=".1em" cellspacing=".2em"> 
 					<tr>
 					    <th>Heading 1</th>
 					    <th>Heading 2</th>

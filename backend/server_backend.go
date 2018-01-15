@@ -182,9 +182,9 @@ func quizLogic() string{
 		Y \== ans1,
 		Z \== ans1,
 		(
-			Result = scroll
-			;
 			Result = click
+			;
+			Result = scroll
 			)
 		.
 
@@ -225,7 +225,7 @@ func quizLogic() string{
 
 func checkError(w http.ResponseWriter, err error) {
 	if err != nil {
-		w.WriteHeader(500) // error
+		w.WriteHeader(400) // error
 		fmt.Println(err)
 		fmt.Fprintf(w, "Bad input")
 		w.Write([]byte("{ error: bad input }"))

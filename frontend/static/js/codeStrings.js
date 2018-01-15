@@ -171,49 +171,49 @@ var squishJS = `
 
 var squishHTML = `
 <table class="responsive" data-compression="6" data-min="8" data-max="16" cellpadding=".1em" cellspacing=".2em">
-          <tr>
-              <th>Heading 1</th>
-              <th>Heading 2</th>
-              <th>Heading 3</th>
-              <th>Heading 4</th>
-              <th>Heading 5</th>
-          </tr>
-          <tr>
-            <td>Row 1, Col 1</td>
-            <td>Row 1, Col 2</td>
-            <td>Row 1, Col 3</td>
-            <td>Row 1, Col 4</td>
-            <td>Row 1, Col 5</td>
-          </tr>
-          <tr>
-            <td>Row 2, Col 1</td>
-            <td>Row 2, Col 2</td>
-            <td>Row 2, Col 3</td>
-            <td>Row 2, Col 4</td>
-            <td>Row 2, Col 5</td>
-          </tr>
-          <tr>
-            <td>Row 3, Col 1</td>
-            <td>Row 3, Col 2</td>
-            <td>Row 3, Col 3</td>
-            <td>Row 3, Col 4</td>
-            <td>Row 3, Col 5</td>
-          </tr>
-          <tr>
-            <td>Row 4, Col 1</td>
-            <td>Row 4, Col 2</td>
-            <td>Row 4, Col 3</td>
-            <td>Row 4, Col 4</td>
-            <td>Row 4, Col 5</td>
-          </tr>
-          <tr>
-            <td>Row 5, Col 1</td>
-            <td>Row 5, Col 2</td>
-            <td>Row 5, Col 3</td>
-            <td>Row 5, Col 4</td>
-            <td>Row 5, Col 5</td>
-          </tr>
-        </table>
+  <tr>
+      <th>Heading 1</th>
+      <th>Heading 2</th>
+      <th>Heading 3</th>
+      <th>Heading 4</th>
+      <th>Heading 5</th>
+  </tr>
+  <tr>
+    <td>Row 1, Col 1</td>
+    <td>Row 1, Col 2</td>
+    <td>Row 1, Col 3</td>
+    <td>Row 1, Col 4</td>
+    <td>Row 1, Col 5</td>
+  </tr>
+  <tr>
+    <td>Row 2, Col 1</td>
+    <td>Row 2, Col 2</td>
+    <td>Row 2, Col 3</td>
+    <td>Row 2, Col 4</td>
+    <td>Row 2, Col 5</td>
+  </tr>
+  <tr>
+    <td>Row 3, Col 1</td>
+    <td>Row 3, Col 2</td>
+    <td>Row 3, Col 3</td>
+    <td>Row 3, Col 4</td>
+    <td>Row 3, Col 5</td>
+  </tr>
+  <tr>
+    <td>Row 4, Col 1</td>
+    <td>Row 4, Col 2</td>
+    <td>Row 4, Col 3</td>
+    <td>Row 4, Col 4</td>
+    <td>Row 4, Col 5</td>
+  </tr>
+  <tr>
+    <td>Row 5, Col 1</td>
+    <td>Row 5, Col 2</td>
+    <td>Row 5, Col 3</td>
+    <td>Row 5, Col 4</td>
+    <td>Row 5, Col 5</td>
+  </tr>
+</table>
         `;
 
 var scrollCSS = `
@@ -500,50 +500,50 @@ var rowCollapseCSS = `
 `;
 
 var rowCollapseHTML = `
-        <table class="rwd-table">
-          <tr>
-            <th>Heading 1</th>
-            <th>Heading 2</th>
-            <th>Heading 3</th>
-            <th>Heading 4</th>
-            <th>Heading 5</th>
-          </tr>
-          <tr>
-            <td data-th="Heading 1">Row 1, Col 1</td>
-            <td data-th="Heading 2">Row 1, Col 2</td>
-            <td data-th="Heading 3">Row 1, Col 3</td>
-            <td data-th="Heading 4">Row 1, Col 4</td>
-            <td data-th="Heading 5">Row 1, Col 5</td>
-          </tr>
-          <tr>
-            <td data-th="Heading 1">Row 2, Col 1</td>
-            <td data-th="Heading 2">Row 2, Col 2</td>
-            <td data-th="Heading 3">Row 2, Col 3</td>
-            <td data-th="Heading 4">Row 2, Col 4</td>
-            <td data-th="Heading 5">Row 2, Col 5</td>
-          </tr>
-          <tr>
-            <td data-th="Heading 1">Row 3, Col 1</td>
-            <td data-th="Heading 2">Row 3, Col 2</td>
-            <td data-th="Heading 3">Row 3, Col 3</td>
-            <td data-th="Heading 4">Row 3, Col 4</td>
-            <td data-th="Heading 5">Row 3, Col 5</td>
-          </tr>
-          <tr>
-            <td data-th="Heading 1">Row 4, Col 1</td>
-            <td data-th="Heading 2">Row 4, Col 2</td>
-            <td data-th="Heading 3">Row 4, Col 3</td>
-            <td data-th="Heading 4">Row 4, Col 4</td>
-            <td data-th="Heading 5">Row 4, Col 5</td>
-          </tr>
-          <tr>
-            <td data-th="Heading 1">Row 5, Col 1</td>
-            <td data-th="Heading 2">Row 5, Col 2</td>
-            <td data-th="Heading 3">Row 5, Col 3</td>
-            <td data-th="Heading 4">Row 5, Col 4</td>
-            <td data-th="Heading 5">Row 5, Col 5</td>
-          </tr>
-        </table>
+<table class="rwd-table">
+    <tr>
+        <th>Heading 1</th>
+        <th>Heading 2</th>
+        <th>Heading 3</th>
+        <th>Heading 4</th>
+        <th>Heading 5</th>
+    </tr>
+    <tr>
+        <td data-th="Heading 1">Row 1, Col 1</td>
+        <td data-th="Heading 2">Row 1, Col 2</td>
+        <td data-th="Heading 3">Row 1, Col 3</td>
+        <td data-th="Heading 4">Row 1, Col 4</td>
+        <td data-th="Heading 5">Row 1, Col 5</td>
+    </tr>
+    <tr>
+        <td data-th="Heading 1">Row 2, Col 1</td>
+        <td data-th="Heading 2">Row 2, Col 2</td>
+        <td data-th="Heading 3">Row 2, Col 3</td>
+        <td data-th="Heading 4">Row 2, Col 4</td>
+        <td data-th="Heading 5">Row 2, Col 5</td>
+    </tr>
+    <tr>
+        <td data-th="Heading 1">Row 3, Col 1</td>
+        <td data-th="Heading 2">Row 3, Col 2</td>
+        <td data-th="Heading 3">Row 3, Col 3</td>
+        <td data-th="Heading 4">Row 3, Col 4</td>
+        <td data-th="Heading 5">Row 3, Col 5</td>
+    </tr>
+    <tr>
+        <td data-th="Heading 1">Row 4, Col 1</td>
+        <td data-th="Heading 2">Row 4, Col 2</td>
+        <td data-th="Heading 3">Row 4, Col 3</td>
+        <td data-th="Heading 4">Row 4, Col 4</td>
+        <td data-th="Heading 5">Row 4, Col 5</td>
+    </tr>
+    <tr>
+        <td data-th="Heading 1">Row 5, Col 1</td>
+        <td data-th="Heading 2">Row 5, Col 2</td>
+        <td data-th="Heading 3">Row 5, Col 3</td>
+        <td data-th="Heading 4">Row 5, Col 4</td>
+        <td data-th="Heading 5">Row 5, Col 5</td>
+    </tr>
+</table>
         `;
 
 var rowCollapseJS = ` `;

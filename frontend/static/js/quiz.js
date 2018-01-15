@@ -69,15 +69,6 @@ function setNewAnswer(id, answer){
 	document.getElementById(id).innerHTML = answer;
 }
 
-function setNewOnclickAttribute(id, lastQuestion){
-	document.getElementById(id).setAttribute('onclick', "showAnswers('" + id + "')");
-}
-
-function showAnswers(ans) {
-	answersFromUser.q8 = ans;
-	sendAnswers();
-	
-}
 
 
 function sendAnswers() {
