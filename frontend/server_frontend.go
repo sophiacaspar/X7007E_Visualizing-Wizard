@@ -71,6 +71,8 @@ func ScrollHandler(w http.ResponseWriter, r *http.Request) {
 *** different commands (get, post etc) ***
 *****************************************/
 func startWebserver() {
+	ip := "localhost:1025"
+
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	//router.GET("/", IndexHandler)
 	http.HandleFunc("/", IndexHandler)
@@ -81,8 +83,8 @@ func startWebserver() {
 	http.HandleFunc("/scroll", ScrollHandler)
 	http.HandleFunc("/click", ClickHandler)
 
-	fmt.Println("running on localhost:1025")
-	log.Fatal(http.ListenAndServe("localhost:1025", nil))
+	fmt.Println("running on " + ip)
+	log.Fatal(http.ListenAndServe(ip, nil))
 }
 
 
